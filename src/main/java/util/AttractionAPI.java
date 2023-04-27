@@ -26,11 +26,11 @@ public class AttractionAPI {
 		try {
 			String target = "http://apis.data.go.kr/6260000/AttractionService/getAttractionKr";
 			
-			String queryString = "serviceKey=A5EL1P%2FnlWm9XSygDqasNBUyb2LpiutnyD5sDbuPI8AU8nwm9HqHxrGDAJ0eFhTyCPuxUJeg5QIekmNRwfoLIQ%3D%3D&resultType=json&numOfRows=10&pageNo=1";
+			String queryString = "serviceKey=vKxS%2BRKhMt4WrigiKbMl7VOjnr0Bh%2BaRZrQ12fKZro1qXwCjsxMDO9v3tI59gaCOXETcO9Ltmzqdhei2xoqoyA%3D%3D&resultType=json&numOfRows=10&pageNo=1";
 					
 			
 			URI uri = new URI(target + "?" + queryString);
-
+			
 			// HttpClient 객체를 활용하는 방식
 			HttpClient client = HttpClient.newHttpClient();
 			HttpRequest request = HttpRequest.newBuilder(uri).GET().build();
@@ -39,12 +39,6 @@ public class AttractionAPI {
 			Gson gson = new Gson();
 			busanAttractionResult responseResult = gson.fromJson(response.body(), busanAttractionResult.class);
 
-			for(attractionitem one : responseResult.getAttraction().getItem() ) {
-				
-				
-			}
-			System.out.println("[SERVER] cache size : " + cache.size());
-			
 			return responseResult.getAttraction();
 		
 		} catch (Exception e) {

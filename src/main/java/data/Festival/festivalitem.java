@@ -8,9 +8,9 @@ String mainTitle;
 //지역 구
 String gugunNm;
 //위도
-int lat;
+double lat;
 //경도
-int lng;
+double lng;
 //여행지 
 String place;
 //제목
@@ -51,10 +51,10 @@ public String getMainTitle() {
 public String getGugunNm() {
 	return gugunNm;
 }
-public int getLat() {
+public double getLat() {
 	return lat;
 }
-public int getLng() {
+public double getLng() {
 	return lng;
 }
 public String getPlace() {
