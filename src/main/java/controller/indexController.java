@@ -11,9 +11,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import data.Attraction.attractionitem;
 import util.AttractionAPI;
 
+
+
+
+ 
 @WebServlet("/index")
 public class indexController extends HttpServlet {
 	@Override
@@ -25,7 +30,7 @@ public class indexController extends HttpServlet {
 			li.add(attractionitems[i]);
 		}
 
-		System.out.print(li.get(0).getPLACE());
+
 		if (attractionitems != null) {
 			req.setAttribute("attractions", li);
 		}
