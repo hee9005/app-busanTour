@@ -14,7 +14,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import data.Users.users;
 
-@WebServlet
+@WebServlet("/user/login-task")
 public class LoginTaskController extends HttpServlet{
 @Override
 protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
