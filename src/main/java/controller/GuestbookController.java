@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/guestBook")
+@WebServlet("/guestbook")
 public class GuestBookController extends HttpServlet {
 
 	@Override
@@ -16,3 +16,4 @@ public class GuestBookController extends HttpServlet {
 		req.getRequestDispatcher("/WEB-INF/index/guestbook.jsp").forward(req, resp);
 	}
 }
+ 
