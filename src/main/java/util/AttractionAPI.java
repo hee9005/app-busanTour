@@ -14,23 +14,21 @@ import data.Attraction.attractionitem;
 import data.Attraction.busanAttraction;
 import data.Attraction.busanAttractionResult;
 
-
 public class AttractionAPI {
-	
+
 	private static Map<String, busanAttraction> cache;
 	static {
 		cache = new HashMap<>();
 	}
-	
+
 	public synchronized static busanAttraction getAttractions() {
 		try {
 			String target = "http://apis.data.go.kr/6260000/AttractionService/getAttractionKr";
-			
+
 			String queryString = "serviceKey=vKxS%2BRKhMt4WrigiKbMl7VOjnr0Bh%2BaRZrQ12fKZro1qXwCjsxMDO9v3tI59gaCOXETcO9Ltmzqdhei2xoqoyA%3D%3D&resultType=json&numOfRows=10&pageNo=1";
-					
-			
+
 			URI uri = new URI(target + "?" + queryString);
-			
+
 			// HttpClient 객체를 활용하는 방식
 			HttpClient client = HttpClient.newHttpClient();
 			HttpRequest request = HttpRequest.newBuilder(uri).GET().build();
@@ -40,11 +38,11 @@ public class AttractionAPI {
 			busanAttractionResult responseResult = gson.fromJson(response.body(), busanAttractionResult.class);
 
 			return responseResult.getAttraction();
-		
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
-			
+
 		}
 	}
 
