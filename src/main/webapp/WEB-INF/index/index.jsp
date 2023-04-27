@@ -50,6 +50,7 @@ div:nth-child(1) {
 	color: white;
 	background-color: skyblue;
 }
+
 </style>
 </head>
 <body>
@@ -69,24 +70,24 @@ div:nth-child(1) {
 	<div style="display: flex; flex-wrap: wrap;">
 		<c:forEach items="${attractions }" var="obj">
 		<div style="width: 33.3%; padding: 10px; height: 280px; cursor: pointer;" 
-					onclick="location.href='/detail?no=${obj.ucSeq}'">
+					onclick="location.href='/detail?no=${obj.UC_SEQ}'">
 			<div
-				style="width: 100%; border: 1px solid #dddddd; padding: 4px; height: 100%;">
+				style="width: 50%; border: 1px solid #dddddd; padding: 4px; height: 50%;">
 				<div style="height: 10%">
-					<b>${obj.mainTitle }</b>
+					<b>${obj.MAIN_TITLE }</b>
 				</div>
 				<div style="height: 50%">
-					<img src="${obj.mainImgThumb }" style="height: 100%;" />
+					<img src="${obj.MAIN_IMG_THUMB }" style="height: 100%;" />
 				</div>
 				<div style="height: 10%">
-					<b>${obj.usageDayWeekAndTime }</b>
+					<b>${obj.USAGE_DAY_WEEK_AND_TIME }</b>
 				</div>
 				<div
 					style="height: 10%; text-overflow: ellipsis; white-space: nowrap; overflow: hidden">
-					<span>${obj.addr1 }</span>
+					<span>${obj.ADDR1 }</span>
 				</div>
 				<div style="height: 20%; text-overflow: ellipsis; white-space: nowrap; overflow: hidden">
-				 	<c:if test="${obj.itemcntnts }"></c:if></div>
+				 	<c:if test="${obj.ITEMCNTNTS }"></c:if></div>
 
 			</div>
 		</div>

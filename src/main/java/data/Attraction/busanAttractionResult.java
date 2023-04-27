@@ -1,10 +1,10 @@
 package data.Attraction;
 
 public class busanAttractionResult {
-	busanAttraction attraction;
+	busanAttraction getAttractionKr;
 
 	public busanAttraction getAttraction() {
-		return attraction;
+		return getAttractionKr;
 	}
 	
 	
