@@ -8,15 +8,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/guestbook")
+import data.Attraction.busanAttraction;
+
+import util.AttractionAPI;
 
 
-
-public class GuestBookController extends HttpServlet {
-
+@WebServlet("/index")
+public class indexController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/index/guestbook.jsp").forward(req, resp);
+		
+		busanAttraction BusanAttraction = AttractionAPI.getAttractions();
+		
+		if(BusanAttraction != null) {
+			req.setAttribute("attractions", BusanAttraction.getItem());
+		}
+		
+		req.getRequestDispatcher("/WEB-INF/index/index.jsp").forward(req, resp);
 	}
 }
- 
