@@ -26,7 +26,7 @@ public class MessagesDAO extends DAO{
 		obj.put("body", body);
 		obj.put("pass", pass);
 
-		int r = session.insert("messages.create",obj);
+		int r = session.insert("user.create",obj);
 		System.out.println("r===" +r);
 		session.close();
 		return r;
