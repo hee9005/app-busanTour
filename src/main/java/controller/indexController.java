@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import data.Attraction.busanAttraction;
-import data.sido.SidoResponse;
-import util.AttractionAPI;
-import util.SidoAPI;
 
+import util.AttractionAPI;
+
+ 
 @WebServlet("/index")
 public class indexController extends HttpServlet{
 	@Override
