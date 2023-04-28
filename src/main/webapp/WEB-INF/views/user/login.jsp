@@ -15,7 +15,7 @@
 		<div>
 			비밀번호 : <input type="password" name="pass"/>
 		</div>
-		 <button type = "reset">취소</button>
+		 <button type = "submit">취소</button>
 		 <button type = "submit">로그인</button>
 	</form>
 </body>
