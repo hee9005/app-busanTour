@@ -2,91 +2,92 @@ package data.Food;
 
 public class foodItem {
 	//콘텐츠ID	
-	int ucSeq;
+	int UC_SEQ;
 	//콘텐츠명
-	String mainTitle;
+	String MAIN_TITLE;
 	//지역 구
-	String gugunNm;
+	String GUGUN_NM;
 	//위도
-	int lat;
+	double LAT;
 	//경도
-	int lng;
+	double LNG;
 	//장소 
-	String place;
+	String PLACE;
 	//제목
-	String title;
+	String TITLE;
 	//부제목
-	String subtitle;
+	String SUBTITLE;
 	//주소
-	String addr1;
+	String ADDR1;
 	//주소 기타
-	String addr2;
+	String ADDR2;
 	//연락처
-	String cntctTel;
+	String CNTCT_TEL;
 	//홈페이지
-	String homepageUrl;
+	String HOMEPAGE_URL;
 	//운영 및 시간
-	String usageDayWeekAndTime;
+	String USAGE_DAY_WEEK_AND_TIME;
 	//대표메뉴
-	String rprsntvMenu;
+	String RPRSNTV_MENU;
 	//이미지
-	String mainImgNormal;
+	String MAIN_IMG_NORMAL;
 	//썸네일이미지
-	String mainImgThumb;
+	String MAIN_IMG_THUMB;
 	//상세내용
-	String itemcntnts;
+	String ITEMCNTNTS;
 	
-	public int getUcSeq() {
-		return ucSeq;
+	public int getUC_SEQ() {
+		return UC_SEQ;
 	}
-	public String getMainTitle() {
-		return mainTitle;
+	public String getMAIN_TITLE() {
+		return MAIN_TITLE;
 	}
-	public String getGugunNm() {
-		return gugunNm;
+	public String getGUGUN_NM() {
+		return GUGUN_NM;
 	}
-	public int getLat() {
-		return lat;
+	public double getLAT() {
+		return LAT;
 	}
-	public int getLng() {
-		return lng;
+	public double getLNG() {
+		return LNG;
 	}
-	public String getPlace() {
-		return place;
+	public String getPLACE() {
+		return PLACE;
 	}
-	public String getTitle() {
-		return title;
+	public String getTITLE() {
+		return TITLE;
 	}
-	public String getSubtitle() {
-		return subtitle;
+	public String getSUBTITLE() {
+		return SUBTITLE;
 	}
-	public String getAddr1() {
-		return addr1;
+	public String getADDR1() {
+		return ADDR1;
 	}
-	public String getAddr2() {
-		return addr2;
+	public String getADDR2() {
+		return ADDR2;
 	}
-	public String getCntctTel() {
-		return cntctTel;
+	public String getCNTCT_TEL() {
+		return CNTCT_TEL;
 	}
-	public String getHomepageUrl() {
-		return homepageUrl;
+	public String getHOMEPAGE_URL() {
+		return HOMEPAGE_URL;
 	}
-	public String getUsageDayWeekAndTime() {
-		return usageDayWeekAndTime;
+	public String getUSAGE_DAY_WEEK_AND_TIME() {
+		return USAGE_DAY_WEEK_AND_TIME;
 	}
-	public String getRprsntvMenu() {
-		return rprsntvMenu;
+	public String getRPRSNTV_MENU() {
+		return RPRSNTV_MENU;
 	}
-	public String getMainImgNormal() {
-		return mainImgNormal;
+	public String getMAIN_IMG_NORMAL() {
+		return MAIN_IMG_NORMAL;
 	}
-	public String getMainImgThumb() {
-		return mainImgThumb;
+	public String getMAIN_IMG_THUMB() {
+		return MAIN_IMG_THUMB;
 	}
-	public String getItemcntnts() {
-		return itemcntnts;
+	public String getITEMCNTNTS() {
+		return ITEMCNTNTS;
 	}
+	
 	
 	
 }

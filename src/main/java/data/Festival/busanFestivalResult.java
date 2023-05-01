@@ -1,10 +1,10 @@
 package data.Festival;
 
 public class busanFestivalResult {
-	busanFestival festival;
+	busanFestival getFestivalKr;
 
-	public busanFestival getFestival() {
-		return festival;
+	public busanFestival getFestivalKr() {
+		return getFestivalKr;
 	}
 	
 }

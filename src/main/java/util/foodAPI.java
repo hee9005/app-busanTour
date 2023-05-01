@@ -26,11 +26,8 @@ public class foodAPI {
 			
 			Gson gson = new Gson();
 			busanFoodResult responseResult = gson.fromJson(response.body(), busanFoodResult.class);
-			for(foodItem one : responseResult.getFood().getItem()) {
-				
-			}
 			
-			return responseResult.getFood();
+			return responseResult.getFoodKr();
 			
 			
 		} catch(Exception e) {
