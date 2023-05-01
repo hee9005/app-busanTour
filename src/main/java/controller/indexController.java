@@ -40,7 +40,7 @@ public class indexController extends HttpServlet {
 		
 		festivalitem[] festivalitems = festivalAPI.getFestivals().getItem();
 		List<festivalitem> fes = new LinkedList<>();
-		for (int i = 0; i < attractionitems.length; i++) {
+		for (int i = 0; i < festivalitems.length; i++) {
 			fes.add(festivalitems[i]);
 		}
 
