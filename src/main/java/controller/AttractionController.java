@@ -22,6 +22,13 @@ public class AttractionController extends HttpServlet{
 		for (int i = 0; i < attractionitems.length; i++) {
 			att.add(attractionitems[i]);
 		}
+		
+		if (attractionitems != null) {
+			req.setAttribute("attractions", att);
+		}
+		
+		req.getRequestDispatcher("/WEB-INF/index/attractionScreen.jsp").forward(req, resp);
+
 
 	}
 	

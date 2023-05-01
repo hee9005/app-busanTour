@@ -48,9 +48,9 @@
 	
   <div>부산 여행 정보 서비스</div>
   <div style="display: flex; flex-wrap: wrap;" id="attractions">
-    
-    <c:forEach items="${attractions}" var="obj">
-      <div class="attraction-item" onclick="location.href='/attractiondetail?no=${obj.UC_SEQ}'">
+
+    <c:forEach items="${foods}" var="obj">
+      <div class="attraction-item" onclick="location.href='/detail?no=${obj.UC_SEQ}'">
         <div class="title">${obj.MAIN_TITLE}</div>
         <div class="image-wrapper">
           <img src="${obj.MAIN_IMG_THUMB}" alt="${obj.MAIN_TITLE}" />
@@ -59,7 +59,6 @@
         <div class="description">${obj.ITEMCNTNTS}</div>
       </div>
     </c:forEach>
-   
   </div>
 
 </body>
