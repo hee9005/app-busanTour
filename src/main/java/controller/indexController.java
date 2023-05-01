@@ -27,14 +27,16 @@ import util.foodAPI;
 public class indexController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+			
 		
 		attractionitem[] attractionitems = AttractionAPI.getAttractions().getItem();
 		List<attractionitem> att = new LinkedList<>();
-		
-		if (attractionitems != null) {
-			req.setAttribute("attractions", att);
+		for (int i = 0; i < attractionitems.length; i++) {
+			att.add(attractionitems[i]);
 		}
+
+		
+
 		
 		festivalitem[] festivalitems = festivalAPI.getFestivals().getItem();
 		List<festivalitem> fes = new LinkedList<>();
@@ -43,18 +45,19 @@ public class indexController extends HttpServlet {
 		}
 
 		
-
-		if (festivalitems != null) {
-			req.setAttribute("festivals", fes);
-		}
-		
 		foodItem[] fooditems = foodAPI.getFoods().getItem();
 		List<foodItem> foo = new LinkedList<>();
 		for (int i = 0; i < fooditems.length; i++) {
 			foo.add(fooditems[i]);
 		}
 
+		if (attractionitems != null) {
+			req.setAttribute("attractions", att);
+		}
 		
+		if (festivalitems != null) {
+			req.setAttribute("festival", fes);
+		}
 
 		if (fooditems != null) {
 			req.setAttribute("foods", foo);

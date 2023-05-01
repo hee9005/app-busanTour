@@ -51,14 +51,12 @@
   top: 20px;
   right: 15px;
 }
-
-
-/* 전체글 버튼 */
+/* 전체글 */
 #indexButton {
   text-align: center;
   position: fixed;
-  top: 15%;
-  right: 70%;
+  top: 10%;
+  right: 80%;
 }
 
 #indexButton button {
@@ -78,12 +76,12 @@
 #indexButton button { /* 모서리를 둥글게만듬 */
   border-radius: 15px;
 }
-/* 명소 버튼 */
+/* 명소 */
 #attractionButton {
   text-align: center;
   position: fixed;
-  top: 15%;
-  right: 60%;
+  top: 10%;
+  right: 70%;
 }
 
 #attractionButton button {
@@ -103,12 +101,12 @@
 #attractionButton button { /* 모서리를 둥글게만듬 */
   border-radius: 15px;
 }
-/* 축제 버튼*/
+/* 축제 */
 #festivalButton {
   text-align: center;
   position: fixed;
-  top: 15%;
-  right: 50%;
+  top: 10%;
+  right: 60%;
 }
 
 #festivalButton button {
@@ -128,12 +126,12 @@
 #festivalButton button { /* 모서리를 둥글게만듬 */
   border-radius: 15px;
 }
-/* 맛집 버튼*/
+/* 맛집 */
 #foodButton {
   text-align: center;
   position: fixed;
-  top: 15%;
-  right: 40%;
+  top: 10%;
+  right: 50%;
 }
 
 #foodButton button {
@@ -158,8 +156,8 @@
 #guestButton {
   text-align: center;
   position: fixed;
-  top: 15%;
-  right: 30%;
+  top: 10%;
+  right: 40%;
 }
 
 #guestButton button {
@@ -226,7 +224,7 @@
 }
 
 #attractions > div > div:nth-child(3) {
-  height: 20%;
+  height: 24%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -241,7 +239,7 @@
 }
 
 #attractions > div > div:last-child {
-  height: 30%;
+  height: 10%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
