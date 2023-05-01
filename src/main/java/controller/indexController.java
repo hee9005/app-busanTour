@@ -13,8 +13,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import data.Attraction.attractionitem;
-
+import data.Festival.festivalitem;
+import data.Food.foodItem;
 import util.AttractionAPI;
+import util.festivalAPI;
+import util.foodAPI;
 
 
 
@@ -27,16 +30,42 @@ public class indexController extends HttpServlet {
 			
 		
 		attractionitem[] attractionitems = AttractionAPI.getAttractions().getItem();
-		List<attractionitem> li = new LinkedList<>();
+		List<attractionitem> att = new LinkedList<>();
 		for (int i = 0; i < attractionitems.length; i++) {
-			li.add(attractionitems[i]);
+			att.add(attractionitems[i]);
 		}
 
+		
 
 		if (attractionitems != null) {
-			req.setAttribute("attractions", li);
+			req.setAttribute("attractions", att);
+		}
+		
+		festivalitem[] festivalitems = festivalAPI.getFestivals().getItem();
+		List<festivalitem> fes = new LinkedList<>();
+		for (int i = 0; i < attractionitems.length; i++) {
+			fes.add(festivalitems[i]);
+		}
+
+		
+
+		if (festivalitems != null) {
+			req.setAttribute("festivals", fes);
+		}
+		
+		foodItem[] fooditems = foodAPI.getFoods().getItem();
+		List<foodItem> foo = new LinkedList<>();
+		for (int i = 0; i < fooditems.length; i++) {
+			foo.add(fooditems[i]);
+		}
+
+		
+
+		if (fooditems != null) {
+			req.setAttribute("foods", foo);
 		}
 
 		req.getRequestDispatcher("/WEB-INF/index/index.jsp").forward(req, resp);
 	}
 }
+

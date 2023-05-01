@@ -1,10 +1,10 @@
 package data.Food;
 
 public class busanFoodResult {
-	busanFood food;
+	busanFood getFoodKr;
 
-	public busanFood getFood() {
-		return food;
+	public busanFood getFoodKr() {
+		return getFoodKr;
 	}
 	
 }
