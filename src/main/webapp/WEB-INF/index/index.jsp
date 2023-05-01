@@ -25,6 +25,21 @@
 		<button>전체글</button>
 	</form>
 	</div>
+	<div id="attractionButton">
+	<form action="/attraction">
+		<button>명소</button>
+	</form>
+	</div>
+	<div id="festivalButton">
+	<form action="/festival">
+		<button>축제</button>
+	</form>
+	</div>
+	<div id="foodButton">
+	<form action="/food">
+		<button>맛집</button>
+	</form>
+	</div>
 	<div id="guestButton">
 		<form action="/guestbook">
 			<button id="guestbook">방명록</button>
@@ -34,7 +49,7 @@
   <div>부산 여행 정보 서비스</div>
   <div style="display: flex; flex-wrap: wrap;" id="attractions">
     <c:forEach items="${attractions}" var="obj">
-      <div class="attraction-item" onclick="location.href='/detail?no=${obj.UC_SEQ}'">
+      <div class="attraction-item" onclick="location.href='/attractiondetail?no=${obj.UC_SEQ}'">
         <div class="title">${obj.MAIN_TITLE}</div>
         <div class="image-wrapper">
           <img src="${obj.MAIN_IMG_THUMB}" alt="${obj.MAIN_TITLE}" />

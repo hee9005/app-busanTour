@@ -24,15 +24,14 @@ import util.AttractionAPI;
 public class indexController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			
+		
 		
 		attractionitem[] attractionitems = AttractionAPI.getAttractions().getItem();
 		List<attractionitem> li = new LinkedList<>();
 		for (int i = 0; i < attractionitems.length; i++) {
 			li.add(attractionitems[i]);
 		}
-
-
+		
 		if (attractionitems != null) {
 			req.setAttribute("attractions", li);
 		}
