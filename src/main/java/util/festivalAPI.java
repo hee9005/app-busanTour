@@ -32,11 +32,11 @@ public class festivalAPI {
 			Gson gson = new Gson();
 			busanFestivalResult responseResult = gson.fromJson(response.body(), busanFestivalResult.class);
 			
-			for(festivalitem one : responseResult.getFestival().getItem()) {
+			for(festivalitem one : responseResult.getFestivalKr().getItem()) {
 				
 			}
 			
-			return responseResult.getFestival();
+			return responseResult.getFestivalKr();
 		
 		}catch(Exception e) {
 			e.printStackTrace();

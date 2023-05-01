@@ -2,105 +2,104 @@ package data.Festival;
 
 public class festivalitem {
 //상세페이지 뽑을값	
-int ucSeq;
+int UC_SEQ;
 //콘텐츠명
-String mainTitle;
+String MAIN_TITLE;
 //지역 구
-String gugunNm;
+String GUGUN_NM;
 //위도
-double lat;
+double LAT;
 //경도
-double lng;
+double LNG;
 //여행지 
-String place;
+String PLACE;
 //제목
-String title;
+String TITLE;
 //부제목
-String subtitle;
+String SUBTITLE;
 //주요장소
-String mainPlace;
+String MAIN_PLACE;
 //주소
-String addr1;
+String ADDR1;
 //주소 기타
-String addr2;
+String ADDR2;
 //연락처
-String cntctTel;
+String CNTCT_TEL;
 //홈페이지
-String homepageUrl;
+String HOMEPAGE_URL;
 //교통정보
-String trfcInfo;
+String TRFC_INFO;
 //운영기간 
-String usageDay;
+String USAGE_DAY;
 //이용요일 및 시간
-String usageDayWeekAndTime;
+String USAGE_DAY_WEEK_AND_TIME;
 //이용요금
-String usageAmount;
+String USAGE_AMOUNT;
 //이미지
-String mainImgNormal;
+String MAIN_IMG_NORMAL;
 //썸네일이미지
-String mainImgThumb;
+String MAIN_IMG_THUMB;
 //상세내용
-String itemcntnts;
-
-public int getUcSeq() {
-	return ucSeq;
+String ITEMCNTNTS;
+public int getUC_SEQ() {
+	return UC_SEQ;
 }
-public String getMainTitle() {
-	return mainTitle;
+public String getMAIN_TITLE() {
+	return MAIN_TITLE;
 }
-public String getGugunNm() {
-	return gugunNm;
+public String getGUGUN_NM() {
+	return GUGUN_NM;
 }
-public double getLat() {
-	return lat;
+public double getLAT() {
+	return LAT;
 }
-public double getLng() {
-	return lng;
+public double getLNG() {
+	return LNG;
 }
-public String getPlace() {
-	return place;
+public String getPLACE() {
+	return PLACE;
 }
-public String getTitle() {
-	return title;
+public String getTITLE() {
+	return TITLE;
 }
-public String getSubtitle() {
-	return subtitle;
+public String getSUBTITLE() {
+	return SUBTITLE;
 }
-public String getMainPlace() {
-	return mainPlace;
+public String getMAIN_PLACE() {
+	return MAIN_PLACE;
 }
-public String getAddr1() {
-	return addr1;
+public String getADDR1() {
+	return ADDR1;
 }
-public String getAddr2() {
-	return addr2;
+public String getADDR2() {
+	return ADDR2;
 }
-public String getCntctTel() {
-	return cntctTel;
+public String getCNTCT_TEL() {
+	return CNTCT_TEL;
 }
-public String getHomepageUrl() {
-	return homepageUrl;
+public String getHOMEPAGE_URL() {
+	return HOMEPAGE_URL;
 }
-public String getTrfcInfo() {
-	return trfcInfo;
+public String getTRFC_INFO() {
+	return TRFC_INFO;
 }
-public String getUsageDay() {
-	return usageDay;
+public String getUSAGE_DAY() {
+	return USAGE_DAY;
 }
-public String getUsageDayWeekAndTime() {
-	return usageDayWeekAndTime;
+public String getUSAGE_DAY_WEEK_AND_TIME() {
+	return USAGE_DAY_WEEK_AND_TIME;
 }
-public String getUsageAmount() {
-	return usageAmount;
+public String getUSAGE_AMOUNT() {
+	return USAGE_AMOUNT;
 }
-public String getMainImgNormal() {
-	return mainImgNormal;
+public String getMAIN_IMG_NORMAL() {
+	return MAIN_IMG_NORMAL;
 }
-public String getMainImgThumb() {
-	return mainImgThumb;
+public String getMAIN_IMG_THUMB() {
+	return MAIN_IMG_THUMB;
 }
-public String getItemcntnts() {
-	return itemcntnts;
+public String getITEMCNTNTS() {
+	return ITEMCNTNTS;
 }
 
 
