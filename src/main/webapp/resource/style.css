@@ -52,11 +52,113 @@
   right: 15px;
 }
 
+
+/* 전체글 버튼 */
+#indexButton {
+  text-align: center;
+  position: fixed;
+  top: 15%;
+  right: 70%;
+}
+
+#indexButton button {
+  border: 1px solid skyblue;
+  background-color: rgba(0, 0, 0, 0);
+  color: skyblue;
+  font-size: 20px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
+}
+
+#indexButton button:hover {
+  color: white;
+  background-color: skyblue;
+}
+
+#indexButton button { /* 모서리를 둥글게만듬 */
+  border-radius: 15px;
+}
+/* 명소 버튼 */
+#attractionButton {
+  text-align: center;
+  position: fixed;
+  top: 15%;
+  right: 60%;
+}
+
+#attractionButton button {
+  border: 1px solid skyblue;
+  background-color: rgba(0, 0, 0, 0);
+  color: skyblue;
+  font-size: 20px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
+}
+
+#attractionButton button:hover {
+  color: white;
+  background-color: skyblue;
+}
+
+#attractionButton button { /* 모서리를 둥글게만듬 */
+  border-radius: 15px;
+}
+/* 축제 버튼*/
+#festivalButton {
+  text-align: center;
+  position: fixed;
+  top: 15%;
+  right: 50%;
+}
+
+#festivalButton button {
+  border: 1px solid skyblue;
+  background-color: rgba(0, 0, 0, 0);
+  color: skyblue;
+  font-size: 20px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
+}
+
+#festivalButton button:hover {
+  color: white;
+  background-color: skyblue;
+}
+
+#festivalButton button { /* 모서리를 둥글게만듬 */
+  border-radius: 15px;
+}
+/* 맛집 버튼*/
+#foodButton {
+  text-align: center;
+  position: fixed;
+  top: 15%;
+  right: 40%;
+}
+
+#foodButton button {
+  border: 1px solid skyblue;
+  background-color: rgba(0, 0, 0, 0);
+  color: skyblue;
+  font-size: 20px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
+}
+
+#foodButton button:hover {
+  color: white;
+  background-color: skyblue;
+}
+
+#foodButton button { /* 모서리를 둥글게만듬 */
+  border-radius: 15px;
+}
+
 /* 방명록 버튼 스타일 */
 #guestButton {
   text-align: center;
   position: fixed;
-  top: 30%;
+  top: 15%;
   right: 30%;
 }
 
@@ -77,31 +179,6 @@
 #guestButton button { /* 모서리를 둥글게만듬 */
   border-radius: 15px;
 }
-#indexButton {
-  text-align: center;
-  position: fixed;
-  top: 30%;
-  right: 80%;
-}
-
-#indexButton button {
-  border: 1px solid skyblue;
-  background-color: rgba(0, 0, 0, 0);
-  color: skyblue;
-  font-size: 20px;
-  padding: 10px 20px;
-  transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
-}
-
-#indexButton button:hover {
-  color: white;
-  background-color: skyblue;
-}
-
-#indexButton button { /* 모서리를 둥글게만듬 */
-  border-radius: 15px;
-}
-
 /* 관광지 목록 스타일 */
 
 #attractions {
