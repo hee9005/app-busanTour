@@ -5,12 +5,11 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
-import java.util.HashMap;
-import java.util.Map;
+
 
 import com.google.gson.Gson;
 
-import data.Attraction.attractionitem;
+
 import data.Attraction.busanAttraction;
 import data.Attraction.busanAttractionResult;
 
@@ -18,9 +17,8 @@ import data.Attraction.busanAttractionResult;
 
 
 public class AttractionDetailAPI {
-	private static Map<Integer,attractionitem>cache
-	;static{cache=new HashMap<>();
-	}
+	
+	
 	
 
 	public synchronized static busanAttraction getAttractions(String UC_SEQ) {
@@ -38,9 +36,8 @@ public class AttractionDetailAPI {
 
 			Gson gson = new Gson();
 			busanAttractionResult responseResult = gson.fromJson(response.body(), busanAttractionResult.class);
-			for( attractionitem one :responseResult.getAttraction().getItem()){
-				cache.put(one.getUC_SEQ(), one);
-			}
+			
+			
 			return responseResult.getAttraction();
 
 		} catch (Exception e) {
@@ -49,9 +46,5 @@ public class AttractionDetailAPI {
 
 		}
 	}
-public static attractionitem findByDesertionNO(String no) {
-		
-		
-		return cache.get(no);
-	}
+
 }
