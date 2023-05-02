@@ -84,5 +84,7 @@ public class indexController extends HttpServlet {
 		}
 		req.getRequestDispatcher("/WEB-INF/index/index.jsp").forward(req, resp);
 	}
+	
+	
 }
 

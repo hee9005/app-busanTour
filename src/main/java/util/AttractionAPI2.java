@@ -26,7 +26,7 @@ public class AttractionAPI2 {
 		try {
 			String target = "http://apis.data.go.kr/6260000/AttractionService/getAttractionKr";
 
-			String queryString = "serviceKey=vKxS%2BRKhMt4WrigiKbMl7VOjnr0Bh%2BaRZrQ12fKZro1qXwCjsxMDO9v3tI59gaCOXETcO9Ltmzqdhei2xoqoyA%3D%3D&resultType=json&numOfRows=4&pageNo="+ pageNo;
+			String queryString = "serviceKey=P%2FhL5EXdd%2FUh3HtYbHBtZI9PnkTMtbqImGmluwFnOgM%2FsLoypgqVKpFQ17t8zpHrnqoTMIh2ZJCJ2XOx7QFDnw%3D%3D&resultType=json&numOfRows=4&pageNo="+ pageNo;
 
 			URI uri = new URI(target + "?" + queryString);
 
