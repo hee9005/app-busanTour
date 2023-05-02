@@ -55,8 +55,8 @@
 #indexButton {
   text-align: center;
   position: fixed;
-  top: 10%;
-  right: 80%;
+  top: 30%;
+  right: 70%;
 }
 
 #indexButton button {
@@ -80,8 +80,8 @@
 #attractionButton {
   text-align: center;
   position: fixed;
-  top: 10%;
-  right: 70%;
+  top: 30%;
+  right: 65%;
 }
 
 #attractionButton button {
@@ -105,7 +105,7 @@
 #festivalButton {
   text-align: center;
   position: fixed;
-  top: 10%;
+  top: 30%;
   right: 60%;
 }
 
@@ -130,8 +130,8 @@
 #foodButton {
   text-align: center;
   position: fixed;
-  top: 10%;
-  right: 50%;
+  top: 30%;
+  right: 55%;
 }
 
 #foodButton button {
@@ -156,8 +156,8 @@
 #guestButton {
   text-align: center;
   position: fixed;
-  top: 10%;
-  right: 40%;
+  top: 30%;
+  right: 49%;
 }
 
 #guestButton button {
@@ -224,7 +224,7 @@
 }
 
 #attractions > div > div:nth-child(3) {
-  height: 24%;
+  height: 18%;
   display: flex;
   justify-content: center;
   align-items: center;

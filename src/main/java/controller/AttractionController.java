@@ -17,7 +17,13 @@ import util.AttractionAPI;
 public class AttractionController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		attractionitem[] attractionitems = AttractionAPI.getAttractions().getItem();
+		String pageNo;
+		if(req.getParameter("pageNo") ==null) {
+			pageNo ="1";
+		}else {
+			pageNo=req.getParameter("pageNo");
+		}
+		attractionitem[] attractionitems = AttractionAPI.getAttractions(pageNo).getItem();
 		List<attractionitem> att = new LinkedList<>();
 		for (int i = 0; i < attractionitems.length; i++) {
 			att.add(attractionitems[i]);

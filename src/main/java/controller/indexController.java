@@ -1,10 +1,8 @@
 package controller;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,40 +26,40 @@ public class indexController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 			
-		
-		attractionitem[] attractionitems = AttractionAPI.getAttractions().getItem();
-		List<attractionitem> att = new LinkedList<>();
+		int p;
+		if(req.getParameter("page") == null) {
+			p=1;
+		}else {
+			p=Integer.parseInt(req.getParameter("page"));
+		}
+		String pageNo;
+		if(req.getParameter("pageNo") ==null) {
+			pageNo ="1";
+		}else {
+			pageNo=req.getParameter("pageNo");
+		}
+		attractionitem[] attractionitems = AttractionAPI.getAttractions(pageNo).getItem();
+		List<Object> mainHome = new LinkedList<>();
 		for (int i = 0; i < attractionitems.length; i++) {
-			att.add(attractionitems[i]);
+			mainHome.add(attractionitems[i]);
 		}
 
-		
-
-		
-		festivalitem[] festivalitems = festivalAPI.getFestivals().getItem();
-		List<festivalitem> fes = new LinkedList<>();
+		festivalitem[] festivalitems = festivalAPI.getFestivals(pageNo).getItem();
 		for (int i = 0; i < festivalitems.length; i++) {
-			fes.add(festivalitems[i]);
+			mainHome.add(festivalitems[i]);
 		}
 
 		
-		foodItem[] fooditems = foodAPI.getFoods().getItem();
-		List<foodItem> foo = new LinkedList<>();
+		foodItem[] fooditems = foodAPI.getFoods(pageNo).getItem();
 		for (int i = 0; i < fooditems.length; i++) {
-			foo.add(fooditems[i]);
+			mainHome.add(fooditems[i]);
 		}
 
 		if (attractionitems != null) {
-			req.setAttribute("attractions", att);
+			req.setAttribute("mainHome", mainHome);
 		}
 		
-		if (festivalitems != null) {
-			req.setAttribute("festival", fes);
-		}
-
-		if (fooditems != null) {
-			req.setAttribute("foods", foo);
-		}
+		
 
 		req.getRequestDispatcher("/WEB-INF/index/index.jsp").forward(req, resp);
 	}

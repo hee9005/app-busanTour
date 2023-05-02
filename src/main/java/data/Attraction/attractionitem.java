@@ -1,5 +1,7 @@
 package data.Attraction;
 
+import java.util.Objects;
+
 public class attractionitem {
 	// 상세페이지 뽑을값
 	int UC_SEQ;
@@ -42,6 +44,12 @@ public class attractionitem {
 	public int getUC_SEQ() {
 		return UC_SEQ;
 	}
+	
+	public void setUC_SEQ(int UC_SEQ) {
+		this.UC_SEQ = UC_SEQ;
+	}
+
+
 	public String getMAIN_TITLE() {
 		return MAIN_TITLE;
 	}
