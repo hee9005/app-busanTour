@@ -18,8 +18,13 @@ import util.festivalAPI;
 public class FestivalController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
-		festivalitem[] festivalitems = festivalAPI.getFestivals().getItem();
+		String pageNo;
+		if(req.getParameter("pageNo") ==null) {
+			pageNo ="1";
+		}else {
+			pageNo=req.getParameter("pageNo");
+		}
+		festivalitem[] festivalitems = festivalAPI.getFestivals(pageNo).getItem();
 		List<festivalitem> fes = new LinkedList<>();
 		for (int i = 0; i < festivalitems.length; i++) {
 			fes.add(festivalitems[i]);

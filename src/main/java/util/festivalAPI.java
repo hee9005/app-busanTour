@@ -18,10 +18,10 @@ import data.Festival.festivalitem;
 public class festivalAPI {
 	
 	
-	public synchronized static busanFestival getFestivals() {
+	public synchronized static busanFestival getFestivals(String pageNo) {
 		try {
 			String target = "http://apis.data.go.kr/6260000/FestivalService/getFestivalKr";
-			String queryString = "serviceKey=P%2FhL5EXdd%2FUh3HtYbHBtZI9PnkTMtbqImGmluwFnOgM%2FsLoypgqVKpFQ17t8zpHrnqoTMIh2ZJCJ2XOx7QFDnw%3D%3D&numOfRows=10&pageNo=1&resultType=json";
+			String queryString = "serviceKey=P%2FhL5EXdd%2FUh3HtYbHBtZI9PnkTMtbqImGmluwFnOgM%2FsLoypgqVKpFQ17t8zpHrnqoTMIh2ZJCJ2XOx7QFDnw%3D%3D&numOfRows=10&resultType=json&pageNo="+ pageNo;
 			
 			URI uri = new URI(target + "?" + queryString);
 			

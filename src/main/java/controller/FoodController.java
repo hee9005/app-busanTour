@@ -17,9 +17,13 @@ import util.foodAPI;
 public class FoodController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		
-		foodItem[] fooditems = foodAPI.getFoods().getItem();
+		String pageNo;
+		if(req.getParameter("pageNo") ==null) {
+			pageNo ="1";
+		}else {
+			pageNo=req.getParameter("pageNo");
+		}
+		foodItem[] fooditems = foodAPI.getFoods(pageNo).getItem();
 		List<foodItem> foo = new LinkedList<>();
 		for (int i = 0; i < fooditems.length; i++) {
 			foo.add(fooditems[i]);

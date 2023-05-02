@@ -14,10 +14,10 @@ import data.Food.foodItem;
 
 public class foodAPI {
 
-	public synchronized static busanFood getFoods() {
+	public synchronized static busanFood getFoods(String pageNo) {
 		try {
 			String target = "http://apis.data.go.kr/6260000/FoodService/getFoodKr";
-			String queryString = "serviceKey=P%2FhL5EXdd%2FUh3HtYbHBtZI9PnkTMtbqImGmluwFnOgM%2FsLoypgqVKpFQ17t8zpHrnqoTMIh2ZJCJ2XOx7QFDnw%3D%3D&numOfRows=10&pageNo=1&resultType=json";
+			String queryString = "serviceKey=P%2FhL5EXdd%2FUh3HtYbHBtZI9PnkTMtbqImGmluwFnOgM%2FsLoypgqVKpFQ17t8zpHrnqoTMIh2ZJCJ2XOx7QFDnw%3D%3D&numOfRows=10&resultType=json&pageNo="+ pageNo;
 			URI uri = new URI(target + "?" + queryString);
 			
 			HttpClient client = HttpClient.newHttpClient();
