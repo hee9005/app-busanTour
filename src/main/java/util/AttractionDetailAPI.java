@@ -16,13 +16,18 @@ import data.Attraction.busanAttractionResult;
 
 
 
-public class AttractionAPI {
+
+public class AttractionDetailAPI {
+	private static Map<Integer,attractionitem>cache
+	;static{cache=new HashMap<>();
+	}
 	
-	public synchronized static busanAttraction getAttractions(String pageNo) {
+
+	public synchronized static busanAttraction getAttractions(String UC_SEQ) {
 		try {
 			String target = "http://apis.data.go.kr/6260000/AttractionService/getAttractionKr";
 
-			String queryString = "serviceKey=P%2FhL5EXdd%2FUh3HtYbHBtZI9PnkTMtbqImGmluwFnOgM%2FsLoypgqVKpFQ17t8zpHrnqoTMIh2ZJCJ2XOx7QFDnw%3D%3D&resultType=json&numOfRows=10&pageNo="+ pageNo;
+			String queryString = "serviceKey=P%2FhL5EXdd%2FUh3HtYbHBtZI9PnkTMtbqImGmluwFnOgM%2FsLoypgqVKpFQ17t8zpHrnqoTMIh2ZJCJ2XOx7QFDnw%3D%3D&resultType=json&UC_SEQ="+UC_SEQ;
 
 			URI uri = new URI(target + "?" + queryString);
 
@@ -33,7 +38,9 @@ public class AttractionAPI {
 
 			Gson gson = new Gson();
 			busanAttractionResult responseResult = gson.fromJson(response.body(), busanAttractionResult.class);
-			
+			for( attractionitem one :responseResult.getAttraction().getItem()){
+				cache.put(one.getUC_SEQ(), one);
+			}
 			return responseResult.getAttraction();
 
 		} catch (Exception e) {
@@ -42,5 +49,9 @@ public class AttractionAPI {
 
 		}
 	}
-
+public static attractionitem findByDesertionNO(String no) {
+		
+		
+		return cache.get(no);
+	}
 }

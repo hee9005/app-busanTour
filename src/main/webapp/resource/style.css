@@ -55,7 +55,7 @@
 #indexButton {
   text-align: center;
   position: fixed;
-  top: 30%;
+  top: 20%;
   right: 70%;
 }
 
@@ -80,7 +80,7 @@
 #attractionButton {
   text-align: center;
   position: fixed;
-  top: 30%;
+  top: 20%;
   right: 65%;
 }
 
@@ -105,7 +105,7 @@
 #festivalButton {
   text-align: center;
   position: fixed;
-  top: 30%;
+  top: 20%;
   right: 60%;
 }
 
@@ -130,7 +130,7 @@
 #foodButton {
   text-align: center;
   position: fixed;
-  top: 30%;
+  top: 20%;
   right: 55%;
 }
 
@@ -156,7 +156,7 @@
 #guestButton {
   text-align: center;
   position: fixed;
-  top: 30%;
+  top: 20%;
   right: 49%;
 }
 
@@ -177,13 +177,14 @@
 #guestButton button { /* 모서리를 둥글게만듬 */
   border-radius: 15px;
 }
+
 /* 관광지 목록 스타일 */
 
 #attractions {
   display: flex;
   flex-wrap: wrap;
    position: fixed;
-  bottom: 0;
+  bottom: 100px;
   left: 0;
   width: 100%;
   background-color: #fff; /* 화면 아래쪽이므로 백그라운드 색상 추가 */
@@ -250,3 +251,18 @@
     height: 300px;
     padding: 20px;
 }
+/*페이징 스타일*/
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+}
+
+.pagination-container div {
+  text-align: right;
+  margin: 0 10px;
+}
+
