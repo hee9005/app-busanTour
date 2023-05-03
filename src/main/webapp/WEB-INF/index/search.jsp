@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,27 +62,38 @@
 		</form>
 	</div>
 	<div id="search">
-  <form action="/search">
+  <form action="/search?page=${p }">
     <label for="ex_input">검색</label>
     <input name="search" type="text" placeholder="검색어를 입력해주세요.">
     <button type="submit"></button>
   </form>
 </div>
 	<div>부산 여행 정보 서비스</div>
-	<div style="display: flex; flex-wrap: wrap;" id="attractions">
-		<c:forEach items="${mainHome}" var="obj">
-			<div class="attraction-item"
-				onclick="location.href='/attractiondetail?no=${obj.UC_SEQ}'">
-				<div class="title">${obj.MAIN_TITLE}</div>
-				<div class="image-wrapper">
-					<img src="${obj.MAIN_IMG_THUMB}" alt="${obj.MAIN_TITLE}" />
-				</div>
-				<div class="address">${obj.ADDR1}</div>
-				<div class="description">${obj.ITEMCNTNTS}</div>
-			</div>
-		</c:forEach>
-	</div>
-	<div class="pagination-container">
+<div style="display: flex; flex-wrap: wrap;" id="attractions">
+  <c:choose>
+    <c:when test="${not empty filteredList}">
+      <c:forEach items="${filteredList}" var="obj">
+        <c:if test="${not empty param.search and fn:containsIgnoreCase(obj.MAIN_TITLE, param.search)}">
+          <div class="attraction-item"
+            onclick="location.href='/attractiondetail?no=${obj.UC_SEQ}'">
+            <div class="title">${obj.MAIN_TITLE}</div>
+            <div class="image-wrapper">
+              <img src="${obj.MAIN_IMG_THUMB}" alt="${obj.MAIN_TITLE}" />
+            </div>
+            <div class="address">${obj.ADDR1}</div>
+            <div class="description">${obj.ITEMCNTNTS}</div>
+          </div>
+        </c:if>
+      </c:forEach>
+      <c:otherwise>
+        <div>검색 결과가 없습니다.</div>
+      </c:otherwise>
+    </c:when>
+    <c:otherwise>
+      <div>항목이 존재하지 않습니다.</div>
+    </c:otherwise>
+  </c:choose>
+</div>	<div class="pagination-container">
 		<div>
 			<c:if test="${existPrev }">
 				<c:url value="/index?pageNo=${p }" var="target">
