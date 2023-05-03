@@ -63,8 +63,9 @@
 	
   <div>부산 여행 정보 서비스</div>
   <div style="display: flex; flex-wrap: wrap;" id="attractions">
+
     <c:forEach items="${festivals}" var="obj">
-      <div class="festival-item" onclick="location.href='/festival-task?no=${obj.UC_SEQ}'">
+      <div class="attraction-item" onclick="location.href='/festival-task?no=${obj.UC_SEQ}'">
         <div class="title">${obj.MAIN_TITLE}</div>
         <div class="image-wrapper">
           <img src="${obj.MAIN_IMG_THUMB}" alt="${obj.MAIN_TITLE}" />
@@ -73,8 +74,31 @@
         <div class="description">${obj.ITEMCNTNTS}</div>
       </div>
     </c:forEach>
-    
   </div>
+  
+  <div class="pagination-container">
+		<div>
+			<c:if test="${existPrev }">
+				<c:url value="/festival?pageNo=${p }" var="target">
+					<c:param name="page" value="${start-1 }" />
+				</c:url>
+				<a href="${target}">←</a>
+			</c:if>
+		</div>
+		<div>
+			<c:forEach begin="${start }" end="${last}" var="p">
+				<a href="/festival?pageNo=${p }&page=${p}">${p }</a>
+			</c:forEach>
+		</div>
+		<div>
+			<c:if test="${existNext }">
+				<c:url value="/festival?pageNo=${p }" var="target">
+					<c:param name="page" value="${last + 1 }" />
+				</c:url>
+				<a href="${target }">→</a>
+			</c:if>
+		</div>
+	</div>
 
 </body>
 </html>
