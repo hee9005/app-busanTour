@@ -5,15 +5,15 @@
  <mapper namespace="view">
  
 <insert id="createView" parameterType="HashMap">
-       INSERT INTO VIEWS (VIEW_ORDER, TARGET)
-       VALUES(#{viewOrder}, #{target})
+       INSERT INTO VIEWS (TARGET)
+       VALUES(#{target})
     </insert>
  
 <update id="updateView"  parameterType="string" >
 		UPDATE VIEWS SET VIEW_ORDER = VIEW_ORDER + 1 WHERE TARGET = #{target}
 	</update>
 	
-<select id="findView" resultType="list">
+<select id="findView" resultType="data.views.views">
         SELECT * FROM VIEWS
 </select>	
 	 
