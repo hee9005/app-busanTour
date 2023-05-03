@@ -18,9 +18,6 @@ import util.AttractionAPI2;
 import util.festivalAPI2;
 import util.foodAPI2;
 
-
-
-
  
 @WebServlet("/index")
 public class indexController extends HttpServlet {

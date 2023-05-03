@@ -10,9 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import data.Attraction.attractionitem;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 
+import data.Attraction.attractionitem;
+import data.Festival.festivalitem;
 import util.AttractionDetailAPI;
+
 
 @WebServlet("/attraction-task")
 public class AttractionTaskController extends HttpServlet{
@@ -25,6 +29,8 @@ public class AttractionTaskController extends HttpServlet{
 		for (int i = 0; i < attractionitems.length; i++) {
 		    attractionitem.add(attractionitems[i]);
 		}
+		
+		
 		if (attractionitem.isEmpty()) {
 		    req.getRequestDispatcher("/WEB-INF/views/not-found.jsp").forward(req, resp);
 		} else {
