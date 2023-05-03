@@ -18,9 +18,6 @@ import data.Attraction.busanAttractionResult;
 
 public class AttractionDetailAPI {
 	
-	
-	
-
 	public synchronized static busanAttraction getAttractions(String UC_SEQ) {
 		try {
 			String target = "http://apis.data.go.kr/6260000/AttractionService/getAttractionKr";
