@@ -25,8 +25,10 @@ public class AttractionDetailAPI {
 		try {
 			String target = "http://apis.data.go.kr/6260000/AttractionService/getAttractionKr";
 
-			String queryString = "serviceKey=P%2FhL5EXdd%2FUh3HtYbHBtZI9PnkTMtbqImGmluwFnOgM%2FsLoypgqVKpFQ17t8zpHrnqoTMIh2ZJCJ2XOx7QFDnw%3D%3D&resultType=json&UC_SEQ="+UC_SEQ;
-
+			String serviceKey = "serviceKey=P%2FhL5EXdd%2FUh3HtYbHBtZI9PnkTMtbqImGmluwFnOgM%2FsLoypgqVKpFQ17t8zpHrnqoTMIh2ZJCJ2XOx7QFDnw%3D%3D";
+			String resultType = "&resultType=json";
+			
+			String queryString = serviceKey + resultType + "&UC_SEQ="+UC_SEQ;
 			URI uri = new URI(target + "?" + queryString);
 
 			// HttpClient 객체를 활용하는 방식

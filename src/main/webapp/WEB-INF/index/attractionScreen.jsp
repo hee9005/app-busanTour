@@ -61,6 +61,28 @@
     </c:forEach>
    
   </div>
-
+<div class="pagination-container">
+		<div>
+			<c:if test="${existPrev }">
+				<c:url value="/attraction?pageNo=${p }" var="target">
+					<c:param name="page" value="${start-1 }" />
+				</c:url>
+				<a href="${target}">←</a>
+			</c:if>
+		</div>
+		<div>
+			<c:forEach begin="${start }" end="${last}" var="p">
+				<a href="/attraction?pageNo=${p }&page=${p}">${p }</a>
+			</c:forEach>
+		</div>
+		<div>
+			<c:if test="${existNext }">
+				<c:url value="/attraction?pageNo=${p }" var="target">
+					<c:param name="page" value="${last + 1 }" />
+				</c:url>
+				<a href="${target }">→</a>
+			</c:if>
+		</div>
+	</div>
 </body>
 </html>
