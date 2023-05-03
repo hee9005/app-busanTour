@@ -50,7 +50,7 @@
   <div style="display: flex; flex-wrap: wrap;" id="attractions">
 
     <c:forEach items="${foods}" var="obj">
-      <div class="attraction-item" onclick="location.href='/detail?no=${obj.UC_SEQ}'">
+      <div class="attraction-item" onclick="location.href='/food-task?no=${obj.UC_SEQ}'">
         <div class="title">${obj.MAIN_TITLE}</div>
         <div class="image-wrapper">
           <img src="${obj.MAIN_IMG_THUMB}" alt="${obj.MAIN_TITLE}" />
