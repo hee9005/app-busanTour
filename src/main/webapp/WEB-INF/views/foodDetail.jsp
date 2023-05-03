@@ -48,7 +48,7 @@ body {
 <body>
 <div class="container">
 		<div class="details">
-			<h2>맛집명: ${thing.PLACE.toString()}</h2>
+			<h2>맛집명: ${thing.MAIN_TITLE.toString()}</h2>
 			<div class="image-container">
 				<img src="${thing.MAIN_IMG_NORMAL}" class="image" />
 			</div>
