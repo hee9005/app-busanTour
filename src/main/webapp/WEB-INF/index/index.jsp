@@ -17,7 +17,7 @@
 				</form>
 			</div>
 			<div id="btn_group2">
-				<form action="/user/join">
+				<form action="/user/login">
 					<button id="join">회원가입</button>
 				</form>
 			</div>
@@ -60,7 +60,11 @@
 			<button id="guestbook">방명록</button>
 		</form>
 	</div>
-
+	<div id="search">
+	  <form action="/search">
+	    <textarea style="width: 100%; height: 50px; resize: none" name="body">검색</textarea>
+	  </form>
+	</div>
 	<div>부산 여행 정보 서비스</div>
 	<div style="display: flex; flex-wrap: wrap;" id="attractions">
 		<c:forEach items="${mainHome}" var="obj">
