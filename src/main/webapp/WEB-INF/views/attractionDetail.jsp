@@ -11,6 +11,10 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="/resource/style.css">
   </head>
   <body>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 99c2e020cd0a05bd405c807c0fbb13f1107df150
     <div class="container">
       <div class="details">
         <h1>${item.PLACE.toString()} (조회수:
@@ -50,7 +54,12 @@ pageEncoding="UTF-8"%>
         </div>
         <div class="map-container">
           <div id="map"></div>
+<<<<<<< HEAD
 
+=======
+          
+        </div>
+>>>>>>> 99c2e020cd0a05bd405c807c0fbb13f1107df150
       </div>
     </div>
     </div>

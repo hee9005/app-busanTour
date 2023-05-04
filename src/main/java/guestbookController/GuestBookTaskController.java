@@ -48,11 +48,11 @@ public class GuestBookTaskController extends HttpServlet  {
 			}
 			map.put("boardPass", boardPass);
 			map.put("writer", writer);
-			sqlSession.insert("messages.create", map);
+			sqlSession.insert("messages.createAnonymous", map);
 		}else {
 			String writer = logonUser.getNick();
 			map.put("writer", writer);
-			sqlSession.insert("messages.create", map);
+			sqlSession.insert("messages.createmessage", map);
 		}
 		
 		resp.sendRedirect("/guestbook");
