@@ -3,340 +3,360 @@
 @import
 	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap')
 	;
-	
+
 /* 로그인/회원가입 버튼 스타일 */
 #login {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 }
 
 #join {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 #btn_group1 button {
-  border: 1px solid skyblue;
-  background-color: rgba(0, 0, 0, 0);
-  color: skyblue;
-  padding: 5px;
-  transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
+	border: 1px solid #FF7F50;
+	background-color: #FFA500; /* 주황색 */
+	color: #fff; /* 흰색 */
+	padding: 5px;
+	transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
 }
 
 #btn_group1 button:hover {
-  color: white;
-  background-color: skyblue;
+	color: white;
+	background-color: #FF7F50;
 }
 
 #btn_group1 {
-  position: absolute;
-  top: 20px;
-  right: 85px;
+	position: absolute;
+	top: 20px;
+	right: 85px;
 }
+
 #btn_group2 button {
-  border: 1px solid skyblue;
-  background-color: rgba(0, 0, 0, 0);
-  color: skyblue;
-  padding: 5px;
-  transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
+	border: 1px solid #FF7F50;
+	background-color: #FFA500; /* 주황색 */
+	color: #fff; /* 흰색 */
+	padding: 5px;
+	transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
 }
 
 #btn_group2 button:hover {
-  color: white;
-  background-color: skyblue;
+	color: white;
+	background-color: #FF7F50;
 }
 
 #btn_group2 {
-  position: absolute;
-  top: 20px;
-  right: 15px;
+	position: absolute;
+	top: 20px;
+	right: 15px;
 }
 /* 전체글 */
 #indexButton {
-  text-align: center;
-  position: fixed;
-  top: 20%;
-  right: 70%;
+	text-align: center;
+	position: fixed;
+	top: 20%;
+	right: 70%;
 }
 
 #indexButton button {
-  border: 1px solid skyblue;
-  background-color: rgba(0, 0, 0, 0);
-  color: skyblue;
-  font-size: 20px;
-  padding: 10px 20px;
-  transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
+	border: 1px solid #FF7F50;
+	background-color: rgba(0, 0, 0, 0);
+	color: #FFA500; /* 주황색 */
+	font-size: 20px;
+	padding: 10px 20px;
+	transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
 }
 
 #indexButton button:hover {
-  color: white;
-  background-color: skyblue;
+	color: white;
+	background-color: #FF7F50;
 }
 
 #indexButton button { /* 모서리를 둥글게만듬 */
-  border-radius: 15px;
+	border-radius: 15px;
 }
+
 /* 명소 */
 #attractionButton {
-  text-align: center;
-  position: fixed;
-  top: 20%;
-  right: 65%;
+	text-align: center;
+	position: fixed;
+	top: 20%;
+	right: 65%;
 }
 
 #attractionButton button {
-  border: 1px solid skyblue;
-  background-color: rgba(0, 0, 0, 0);
-  color: skyblue;
-  font-size: 20px;
-  padding: 10px 20px;
-  transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
+	border: 1px solid #FF7F50;
+	background-color: rgba(0, 0, 0, 0);
+	color: #FFA500; /* 주황색 */
+	font-size: 20px;
+	padding: 10px 20px;
+	transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
 }
 
 #attractionButton button:hover {
-  color: white;
-  background-color: skyblue;
+	color: white;
+	background-color: #FF7F50;
 }
 
 #attractionButton button { /* 모서리를 둥글게만듬 */
-  border-radius: 15px;
+	border-radius: 15px;
+}
+
+.attraction-item {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 10px;
+	width: 300px;
+	height: 400px;
 }
 /* 축제 */
 #festivalButton {
-  text-align: center;
-  position: fixed;
-  top: 20%;
-  right: 60%;
+	text-align: center;
+	position: fixed;
+	top: 20%;
+	right: 60%;
 }
 
 #festivalButton button {
-  border: 1px solid skyblue;
-  background-color: rgba(0, 0, 0, 0);
-  color: skyblue;
-  font-size: 20px;
-  padding: 10px 20px;
-  transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
+	border: 1px solid #FF7F50;
+	background-color: rgba(0, 0, 0, 0);
+	color: #FFA500; /* 주황색 */
+	font-size: 20px;
+	padding: 10px 20px;
+	transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
 }
 
 #festivalButton button:hover {
-  color: white;
-  background-color: skyblue;
+	color: white;
+	background-color: #FF7F50;
 }
 
 #festivalButton button { /* 모서리를 둥글게만듬 */
-  border-radius: 15px;
+	border-radius: 15px;
 }
 /* 맛집 */
 #foodButton {
-  text-align: center;
-  position: fixed;
-  top: 20%;
-  right: 55%;
+	text-align: center;
+	position: fixed;
+	top: 20%;
+	right: 55%;
 }
 
 #foodButton button {
-  border: 1px solid skyblue;
-  background-color: rgba(0, 0, 0, 0);
-  color: skyblue;
-  font-size: 20px;
-  padding: 10px 20px;
-  transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
+	border: 1px solid #FF7F50;
+	background-color: rgba(0, 0, 0, 0);
+	color: #FFA500; /* 주황색 */
+	font-size: 20px;
+	padding: 10px 20px;
+	transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
 }
 
 #foodButton button:hover {
-  color: white;
-  background-color: skyblue;
+	color: white;
+	background-color: #FF7F50;
 }
 
 #foodButton button { /* 모서리를 둥글게만듬 */
-  border-radius: 15px;
+	border-radius: 15px;
 }
-
 /* 방명록 버튼 스타일 */
 #guestButton {
-  text-align: center;
-  position: fixed;
-  top: 20%;
-  right: 49%;
+	text-align: center;
+	position: fixed;
+	top: 20%;
+	right: 49%;
 }
 
 #guestButton button {
-  border: 1px solid skyblue;
-  background-color: rgba(0, 0, 0, 0);
-  color: skyblue;
-  font-size: 20px;
-  padding: 10px 20px;
-  transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
+	border: 1px solid #FF7F50;
+	background-color: rgba(0, 0, 0, 0);
+	color: #FFA500; /* 주황색 */
+	font-size: 20px;
+	padding: 10px 20px;
+	transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
 }
 
 #guestButton button:hover {
   color: white;
-  background-color: skyblue;
+  background-color: #FF7F50;
 }
-
 #guestButton button { /* 모서리를 둥글게만듬 */
-  border-radius: 15px;
+	border-radius: 15px;
 }
-
 /* 관광지 목록 스타일 */
-
 #attractions {
-  display: flex;
-  flex-wrap: wrap;
-   position: fixed;
-  bottom: 100px;
-  left: 0;
-  width: 100%;
- background-image: url('https://example.com/background-image.jpg');
-  background-size: cover;
-  background-position: center; /* 화면 아래쪽이므로 백그라운드 색상 추가 */
+	display: flex;
+	flex-wrap: wrap;
+	position: fixed;
+	bottom: 100px;
+	left: 0;
+	width: 100%;
+	background-image: url('https://example.com/background-image.jpg');
+	background-size: cover;
+	background-position: center; /* 화면 아래쪽이므로 백그라운드 색상 추가 */
 }
 
-#attractions > div {
-  width: calc(20% - 20px); /* 오른쪽과 왼쪽에 10px의 패딩을 더해줌 */
-  margin: 10px;
-  padding: 10px;
-  height: 250px;
-  cursor: pointer;
-  box-sizing: border-box; /* 패딩값을 포함해서 계산하도록 설정 */
+#attractions>div {
+	width: calc(20% - 20px); /* 오른쪽과 왼쪽에 10px의 패딩을 더해줌 */
+	margin: 10px;
+	padding: 10px;
+	height: 250px;
+	cursor: pointer;
+	box-sizing: border-box; /* 패딩값을 포함해서 계산하도록 설정 */
 }
 
-#attractions > div:hover {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* 호버시 그림자 추가 */
+#attractions>div:hover {
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* 호버시 그림자 추가 */
 }
 
-#attractions > div > div:first-child {
-  height: 13%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
+#attractions>div>div:first-child {
+	height: 13%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
 }
 
-#attractions > div > div:nth-child(2) {
-  height: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#attractions>div>div:nth-child(2) {
+	height: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-#attractions > div > div:nth-child(2) > img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain; /* 이미지 비율 유지 */
+#attractions>div>div:nth-child(2)>img {
+	max-height: 100%;
+	max-width: 100%;
+	object-fit: contain; /* 이미지 비율 유지 */
 }
 
-#attractions > div > div:nth-child(3) {
-  height: 18%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
+#attractions>div>div:nth-child(3) {
+	height: 18%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
 }
 
-#attractions > div > div:nth-child(4) {
-  height: 10%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+#attractions>div>div:nth-child(4) {
+	height: 10%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
-#attractions > div > div:last-child {
-  height: 10%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+#attractions>div>div:last-child {
+	height: 10%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .box {
-    width: 20%;
-    height: 300px;
-    padding: 20px;
+	width: 20%;
+	height: 300px;
+	padding: 20px;
 }
 /*페이징 스타일*/
 .pagination-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 30px;
-  width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	bottom: 30px;
+	width: 100%;
 }
 
 .pagination-container div {
-  text-align: right;
-  margin: 0 10px;
+	text-align: right;
+	margin: 0 10px;
 }
 /* 반응형 이미지*/
 .image-wrapper img {
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
 }
-
-/* 미디어 쿼리 */
-@media screen and (max-width: 768px) {
-  /* 화면 너비가 768px 이하인 경우 */
-  #btn_group1 {
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-  }
-  #btn_group2 {
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-  }
-  #indexButton, #attractionButton, #festivalButton, #foodButton, #guestButton {
-    width: 100%;
-    margin: 10px auto;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  /* 화면 너비가 768px 이상인 경우 */
-  #btn_group1 {
-    float: left;
-  }
-  #btn_group2 {
-    float: right;
-  }
-  #indexButton, #attractionButton, #festivalButton, #foodButton, #guestButton {
-    display: inline-block;
-    margin: 0 10px;
-  }
-}
-/*검색기능*/
-#search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-   text-align: center;
-  position: fixed;
-  top: 20%;
-  right: 10%;
-}
-
-#search {
-  display: flex;
-  align-items: center; /* 세로 중앙 정렬 */
-}
-
-#search label {
-  display: none; /* 라벨 숨김 */
-}
-
-#search input[name="search"] {
-  flex: 1; /* 검색창이 남은 공간 모두 채우도록 */
-  margin-right: 10px; /* 검색 버튼과의 간격 */
-}
-
-#search button[type="submit"] {
-  background-image: url("data:image/png;base64,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"); /* 돋보기 아이콘 이미지 */
+.container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .details {
+        flex: 2;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+ body {
+  background-image: url('https://images.pexels.com/photos/3250614/pexels-photo-3250614.jpeg?auto=compress&cs=tinysrgb&w=1600');
   background-repeat: no-repeat;
-  background-size: 20px; /* 이미지 크기 */
-  background-position: center; /* 이미지 가운데 정렬 */
-  border: none; /* 테두리 없앰 */
-  width: 30px; /* 고정 크기 */
-  height: 30px;
+  background-size: cover;
+  background-position: center center;
 }
+   .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .details {
+        flex: 2;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .image-container {
+        height: 360px;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 10px;
+      }
+      .image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      .info {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .info table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+        background-color: #f7f7f7;
+      }
+      .info td {
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+      }
+      .info td:first-child {
+        font-weight: bold;
+      }
+      .map-container {
+        height: 400px;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      #map {
+        height: 100%;
+        width: 100%;
+      }
+      @media screen and (max-width: 600px) {
+        .container {
+          flex-direction: column;
+        }
+        .details {
+          flex: 1;
+        }
+      }

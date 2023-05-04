@@ -7,27 +7,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/resource/style.css">
-
-<style>
-  .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: stretch;
-        margin: 0 auto;
-        max-width: 1000px;
-      }
-      .details {
-        flex: 2;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-
-</style>
-
 </head>
 <body>
 <div class="container">

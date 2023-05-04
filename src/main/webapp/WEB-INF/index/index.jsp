@@ -7,8 +7,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/resource/style.css">
+
 </head>
 <body>
+<div class="container">
+        <div class="details">
+
 	<c:choose>
 		<c:when test="${logon eq false }">
 			<div id="btn_group1">
@@ -60,14 +64,8 @@
 			<button id="guestbook">방명록</button>
 		</form>
 	</div>
-	<div id="search">
-  <form action="/search">
-    <label for="ex_input">검색</label>
-    <input name="search" type="text" placeholder="검색어를 입력해주세요.">
-    <button type="submit"></button>
-  </form>
-</div>
-	<div>부산 여행 정보 서비스</div>
+	
+	<h1>부산 여행 정보 서비스</h1>
 	<div style="display: flex; flex-wrap: wrap;" id="attractions">
 		<c:forEach items="${mainHome}" var="obj">
 			<div class="attraction-item"
@@ -104,5 +102,8 @@
 			</c:if>
 		</div>
 	</div>
+	</div>
+	</div>
+	
 </body>
 </html>
