@@ -16,6 +16,9 @@
 <select id="findView" resultType="data.views.views">
         SELECT * FROM VIEWS
 </select>	
+<select id="findViews" resultType="data.views.views" parameterType="String">
+        SELECT * FROM VIEWS WHERE TARGET = #{target}
+</select>	
 	 
  </mapper> 
  
