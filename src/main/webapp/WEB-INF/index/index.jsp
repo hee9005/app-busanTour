@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/resource/style.css">
+<link rel="stylesheet" href="/resource/style.css?<%=System.currentTimeMillis()%>">
 
 </head>
 <body>
