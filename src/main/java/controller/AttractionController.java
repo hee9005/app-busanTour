@@ -27,7 +27,7 @@ public class AttractionController extends HttpServlet{
 		}
 		
 		String pageNo;
-		if(req.getParameter("pageNo") ==null) {
+		if(req.getParameter("page") ==null) {
 			pageNo ="1";
 		}else {
 			pageNo=req.getParameter("page");

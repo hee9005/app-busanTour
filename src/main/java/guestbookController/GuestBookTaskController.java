@@ -1,4 +1,4 @@
-package controller;
+package guestbookController;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -54,7 +54,6 @@ public class GuestBookTaskController extends HttpServlet  {
 			map.put("writer", writer);
 			sqlSession.insert("messages.create", map);
 		}
-		
 		
 		resp.sendRedirect("/guestbook");
 	}

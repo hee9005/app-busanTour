@@ -13,21 +13,31 @@ import javax.servlet.http.HttpServletResponse;
 import data.Attraction.attractionitem;
 import data.Festival.festivalitem;
 import data.Food.foodItem;
-import util.AttractionAPI3;
-import util.AttractionDetailAPI;
-import util.FestivalDetailAPI;
-import util.festivalAPI3;
-import util.foodAPI3;
-import util.foodDetailAPI;
+import util.AttractionAPI;
+import util.festivalAPI;
+import util.foodAPI;
+
 
 @WebServlet("/index-task")
 public class indexTaskController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		int p;
+		if (req.getParameter("page") == null) {
+			p = 1;
+		} else {
+			p = Integer.parseInt(req.getParameter("page"));
+		}
+		String pageNo;
+		if(req.getParameter("pageNo") ==null) {
+			pageNo ="1";
+		}else {
+			pageNo=req.getParameter("page");
+		}
 		List<attractionitem> attractionitem = new LinkedList<>();
 		int UC_SEQ = Integer.parseInt(req.getParameter("no"));
-		attractionitem[] attractionitems = AttractionAPI3.getIndexAttractions().getItem();
+		
+		attractionitem[] attractionitems = AttractionAPI.getAttractions(pageNo).getItem();
 
 		for (int i = 0; i < attractionitems.length; i++) {
 			if (attractionitems[i].getUC_SEQ() == UC_SEQ) {
@@ -39,7 +49,7 @@ public class indexTaskController extends HttpServlet {
 		}
 
 		List<festivalitem> festivalitem = new LinkedList<>();
-		festivalitem[] festivalitems = festivalAPI3.getIndexFestivals().getItem();
+		festivalitem[] festivalitems = festivalAPI.getFestivals(pageNo).getItem();
 		for (int j = 0; j < festivalitems.length; j++) {
 			if (festivalitems[j].getUC_SEQ() == UC_SEQ) {
 				festivalitem.add(festivalitems[j]);
@@ -50,7 +60,7 @@ public class indexTaskController extends HttpServlet {
 		}
 
 		List<foodItem> fooditem = new LinkedList<>();
-		foodItem[] fooditems = foodAPI3.getIndexFoods().getItem();
+		foodItem[] fooditems = foodAPI.getFoods(pageNo).getItem();
 		for (int x = 0; x < fooditems.length; x++) {
 			if (fooditems[x].getUC_SEQ() == UC_SEQ) {
 				fooditem.add(fooditems[x]);

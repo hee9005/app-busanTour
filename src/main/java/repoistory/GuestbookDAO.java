@@ -12,6 +12,7 @@ import org.apache.ibatis.session.SqlSession;
 
 public class GuestbookDAO extends DAO {
 public static int creategusetBook(String content, String boardPass, String writer) {
+
 		
 		SqlSession session = factory.openSession(true);
 		Map<String, Object> obj = new HashMap<>();
