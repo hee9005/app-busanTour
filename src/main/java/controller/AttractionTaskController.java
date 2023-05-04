@@ -42,6 +42,9 @@ public class AttractionTaskController extends HttpServlet{
             } else {
                 sqlSession.insert("view.createView", UC_SEQ);
             }
+           
+         
+            
             attractionitem[] attractionitems = AttractionDetailAPI.getAttractions(UC_SEQ).getItem();
             for (int i = 0; i < attractionitems.length; i++) {
                 attractionitem.add(attractionitems[i]);

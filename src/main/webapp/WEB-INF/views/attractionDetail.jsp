@@ -15,6 +15,9 @@ pageEncoding="UTF-8"%>
       <div class="container">
         <div class="details">
           <h1>${item.PLACE.toString()}</h1>
+          <div align="left">
+			조회수 : <span id="viewList"></span>
+		 </div>
           <div class="image-container">
             <img src="${item.MAIN_IMG_NORMAL}" class="image" />
           </div>

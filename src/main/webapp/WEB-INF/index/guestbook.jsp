@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,8 @@
 </head>
 <body>
 	<form action="/guestbook-task">
+ 
+	<input type="text" name="writer" placeholder="ID">
 	<input type="text" name="writer" placeholder="닉네임">
 	<input type="password" name="boardPass" placeholder="비밀번호" >
 	<input type="text"name="content" placeholder="내용..."> 
