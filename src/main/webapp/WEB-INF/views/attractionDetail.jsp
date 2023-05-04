@@ -11,6 +11,7 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="/resource/style.css">
   </head>
   <body>
+<<<<<<< HEAD
     <div class="container">
       <div class="details">
         <h1>${item.PLACE.toString()} (조회수:
@@ -50,6 +51,40 @@ pageEncoding="UTF-8"%>
         </div>
         <div class="map-container">
           <div id="map"></div>
+=======
+      <div class="container">
+        <div class="details">
+          <h1>${item.PLACE.toString()}</h1>
+          <div align="left">
+			조회수 : <span id="viewList"></span>
+		 </div>
+          <div class="image-container">
+            <img src="${item.MAIN_IMG_NORMAL}" class="image" />
+          </div>
+          <div class="info">
+            <table>
+              <tr>
+                <td>주소</td>
+                <td>${item.ADDR1}</td>
+              </tr>
+              <tr>
+                <td>교통정보</td>
+                <td>${item.TRFC_INFO}</td>
+              </tr>
+              <tr>
+                <td>편의시설</td>
+                <td>${item.MIDDLE_SIZE_RM1}</td>
+              </tr>
+              <tr>
+                <td>상세내용</td>
+                <td>${item.ITEMCNTNTS}</td>
+              </tr>
+            </table>
+          </div>
+          <div class="map-container">
+            <div id="map"></div>
+          </div>
+>>>>>>> cedb72a71a8e0558118fc5106e8e07e6abcee53a
         </div>
       </div>
     </div>
