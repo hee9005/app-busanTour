@@ -30,8 +30,6 @@
 								<td>상세내용</td>
 								<td>${thing.ITEMCNTNTS}</td>
 							</tr>
-							<tr>
-							</tr>
 						</table>
 					</div>
 					<div class="map-container">

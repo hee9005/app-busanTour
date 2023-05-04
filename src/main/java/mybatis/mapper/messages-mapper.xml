@@ -17,5 +17,8 @@
 	<delete id="deleteBoard">
 		delete from guest_book where board_id = #{boardId}
 	</delete>
+	<update id="updateBoard" parameterType="hashmap">
+	update geust_book set content = #{content}, where board_id = #{boardId}
+	</update>
 </mapper> 
  
