@@ -30,6 +30,8 @@ public class AttractionTaskController extends HttpServlet{
             (SqlSessionFactory) req.getServletContext().getAttribute("sqlSessionFactory");
         try (SqlSession sqlSession = factory.openSession(true)) {
             List<views> viewsList = sqlSession.selectList("findView");
+            
+            List<views> viewsLists = sqlSession.selectList("findViews",UC_SEQ);
             boolean viewExists = false;
             for (views item : viewsList) {
                 if (item.getTarget().equals(UC_SEQ)) {
@@ -52,6 +54,7 @@ public class AttractionTaskController extends HttpServlet{
             if (attractionitem.isEmpty()) {
                 req.getRequestDispatcher("/WEB-INF/views/not-found.jsp").forward(req, resp);
             } else {
+            	 req.setAttribute("views", viewsLists);
                 req.setAttribute("item", attractionitem.get(0));
                 req.getRequestDispatcher("/WEB-INF/views/attractionDetail.jsp").forward(req, resp);
             }
