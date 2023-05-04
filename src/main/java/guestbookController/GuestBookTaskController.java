@@ -27,7 +27,7 @@ public class GuestBookTaskController extends HttpServlet  {
 		String content =req.getParameter("content");
 		String writer = req.getParameter("writer");
 		
-		int r = GuestbookDAO.creategusetBook(boardId, content, boardPass, writer);
+		int r = GuestbookDAO.createguestBook(boardId, content, boardPass, writer);
 		resp.sendRedirect("/guestbook");
 	}
 
