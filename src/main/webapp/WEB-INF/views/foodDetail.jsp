@@ -31,8 +31,6 @@
 								<td>${thing.ITEMCNTNTS}</td>
 							</tr>
 							<tr>
-								<td>조회수</td>
-								<td>${views.viewOrder}</td>
 							</tr>
 						</table>
 					</div>

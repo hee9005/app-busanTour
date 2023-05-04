@@ -29,7 +29,7 @@ public class indexTaskController extends HttpServlet {
 			p = Integer.parseInt(req.getParameter("page"));
 		}
 		String pageNo;
-		if(req.getParameter("page") ==null) {
+		if(req.getParameter("pageNo") ==null) {
 			pageNo ="1";
 		}else {
 			pageNo=req.getParameter("page");
