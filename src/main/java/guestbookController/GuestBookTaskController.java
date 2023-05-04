@@ -1,4 +1,4 @@
-package controller;
+package guestbookController;
 
 import java.io.IOException;
 

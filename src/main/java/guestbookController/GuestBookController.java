@@ -1,4 +1,4 @@
-package controller;
+package guestbookController;
 
 import java.io.IOException;
 
@@ -13,6 +13,6 @@ public class GuestBookController extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/index/guestbook.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/guestbook/guestbook.jsp").forward(req, resp);
 	}
 }
