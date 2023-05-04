@@ -30,6 +30,10 @@
 								<td>상세내용</td>
 								<td>${thing.ITEMCNTNTS}</td>
 							</tr>
+							<tr>
+								<td>조회수</td>
+								<td>${views.viewOrder}</td>
+							</tr>
 						</table>
 					</div>
 					<div class="map-container">
