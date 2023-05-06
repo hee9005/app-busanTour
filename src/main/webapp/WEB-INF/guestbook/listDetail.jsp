@@ -12,9 +12,9 @@
 	 ${gbook.boardId }/${gbook.content }
 </div>
 <div>
-					<a href="/guestbook/update?boardId=${gbook.boardId }&caseCheck=1">수정</a> |
-					<a href="/guestbook/update?boardId=${gbook.boardId }&caseCheck=2">삭제</a>
-				</div>	
+			<a href="/guestbook/update?boardId=${gbook.boardId }&caseCheck=1">수정</a> |
+			<a href="/guestbook/update?boardId=${gbook.boardId }&caseCheck=2">삭제</a>
+</div>	
 
 
 </body>
