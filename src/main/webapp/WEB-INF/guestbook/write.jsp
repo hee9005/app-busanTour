@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>방명록 작성</title>
+<link rel="stylesheet" href="/resource/weite.css?<%=System.currentTimeMillis()%>">
 </head>
 <body>
 <form action="/guestbook-task">
