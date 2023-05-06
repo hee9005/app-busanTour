@@ -19,9 +19,10 @@ public static int creategusetBook(String content, String boardPass, String write
 		obj.put("content", content);
 		obj.put("boardPass", boardPass);
 		obj.put("writer", writer);
-		int r = session.insert("messages.create",obj);
+		int r = session.insert("messages.createMessage",obj);
 		System.out.println("r===" +r);
 		session.close();
 		return r;
+		
 	}
 }
