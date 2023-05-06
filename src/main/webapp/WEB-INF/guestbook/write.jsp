@@ -7,7 +7,7 @@
 <title>방명록 작성</title>
 </head>
 <body>
-<form action="/guestbook-task">
+<form action="/guestbook/write-task">
  
 	<input type="text" name="userId" placeholder="ID">
 	<input type="text" name="writer" placeholder="닉네임">

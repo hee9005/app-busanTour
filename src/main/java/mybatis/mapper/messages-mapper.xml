@@ -14,12 +14,14 @@
 		values(BOARD_ID_SEQ.NEXTVAL, #{boardPass}, #{content}, #{writer},
 		SYSDATE)
 	</insert>
+	
 	<delete id="deleteBoard">
 		delete from guest_book where board_id = #{boardId}
 	</delete>
 	<update id="updateBoard" parameterType="hashmap">
-	update geust_book set content = #{content}, where board_id = #{boardId}
+	    update guest_book set content = #{content} where board_id = #{boardId}
 	</update>
+	
 	<select id="findAll" parameterType="hashmap" resultType="data.guestBook.guestBook">
 		select * from guest_book ORDER BY writed
     </select>
@@ -29,5 +31,6 @@
 	<select id="findByBoardId" parameterType="Integer" resultType="data.guestBook.guestBook">
 		select * from guest_book where board_id = #{boardId}
 	</select>
+	
 </mapper> 
  

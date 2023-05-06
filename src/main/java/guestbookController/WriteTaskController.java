@@ -18,7 +18,7 @@ import data.Users.users;
 import data.guestBook.guestBook;
 import repoistory.GuestbookDAO;
 
-@WebServlet("/guestbook-task")
+@WebServlet("/guestbook/write-task")
 public class WriteTaskController extends HttpServlet  {
 	
 	@Override
