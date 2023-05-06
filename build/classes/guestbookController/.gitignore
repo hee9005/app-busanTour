@@ -3,3 +3,6 @@
 /listController.class
 /weiteController.class
 /WriteController.class
+/GuestBookWriteController.class
+/WriteTaskController.class
+/listDetailController.class

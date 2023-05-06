@@ -2,6 +2,7 @@ package guestbookController;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -13,12 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-
 import data.Users.users;
+import data.guestBook.guestBook;
 import repoistory.GuestbookDAO;
 
 @WebServlet("/guestbook-task")
-public class GuestBookTaskController extends HttpServlet  {
+public class WriteTaskController extends HttpServlet  {
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
@@ -52,10 +53,11 @@ public class GuestBookTaskController extends HttpServlet  {
 		}else {
 			String writer = logonUser.getNick();
 			map.put("writer", writer);
-			sqlSession.insert("messages.createmessage", map);
+			sqlSession.insert("messages.createMessage", map);
 		}
 		
-		resp.sendRedirect("/guestbook");
+		
+		resp.sendRedirect("/guestbook/list");
 	}
 
 }

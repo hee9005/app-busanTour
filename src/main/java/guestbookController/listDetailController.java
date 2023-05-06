@@ -1,9 +1,6 @@
 package guestbookController;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,27 +13,20 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import data.guestBook.guestBook;
 
-@WebServlet("/guestbook/list")
-public class listController extends HttpServlet{
-	
-	
+
+
+@WebServlet("/guestbook/listDetail")
+public class listDetailController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		SqlSessionFactory factory = (SqlSessionFactory) req.getServletContext().getAttribute("sqlSessionFactory");
 		SqlSession sqlSession = factory.openSession();
-		
-		Map<String, Object> li = new HashMap<>();
-		String content = req.getParameter("content");
-		String writer = req.getParameter("writer");
-		String writed = req.getParameter("wited");
-		li.put("content", content);
-		li.put("writer", writer);
-		li.put("writed", writed);
-		List<guestBook> list = sqlSession.selectList("messages.findAllDesc", li);
-		req.setAttribute("list", list);
-		
-		
-		req.getRequestDispatcher("/WEB-INF/guestbook/list.jsp").forward(req, resp);
+		int boardId = Integer.parseInt(req.getParameter("boardId"));
+		System.out.println("boardId = " + boardId);
+	    guestBook gbook = sqlSession.selectOne("messages.findByBoardId", boardId);
+	    req.setAttribute("gbook", gbook);
+	    sqlSession.close();
+	    req.getRequestDispatcher("/WEB-INF/guestbook/listDetail.jsp").forward(req, resp);
 	}
-	
+
 }
