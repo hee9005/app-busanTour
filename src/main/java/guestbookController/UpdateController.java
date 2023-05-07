@@ -23,10 +23,11 @@ public class UpdateController extends HttpServlet{
 		
 //		String boardId = req.getParameter("boardId");
 		int boardId = Integer.parseInt(req.getParameter("boardId"));
+		System.out.println(boardId);
 		guestBook guestbook = sqlSession.selectOne("messages.findByBoardId", boardId);
 		req.setAttribute("gbook", guestbook);
 		
-		req.getRequestDispatcher("/WEB-INF/guestbook/update.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/guestbook/update.jsp?boarId" + boardId).forward(req, resp);
 	}
 
 }
