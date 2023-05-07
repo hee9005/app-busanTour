@@ -22,10 +22,11 @@ public class UpdateTaskController extends HttpServlet{
 		
 		SqlSessionFactory factory = (SqlSessionFactory) req.getServletContext().getAttribute("sqlSessionFactory");
 		SqlSession sqlSession = factory.openSession();
-		users logonUser = (users) req.getSession().getAttribute("logonUser");
+		
 		
 		String content = req.getParameter("content");
-		String boardId = req.getParameter("boardId");
+		int boardId = Integer.parseInt(req.getParameter("boardId"));
+//		String boardId = req.getParameter("boardId");
 		Map<String, Object> map = new HashMap<>();
 		map.put("content", content);
 		map.put("boardId", boardId);
