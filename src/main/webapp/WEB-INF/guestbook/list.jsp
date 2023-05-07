@@ -8,6 +8,9 @@
 <title>방명록 목록</title>
 </head>
 <body>
+			   <div>
+			   <a href="/guestbook/list?arr=writed">등록순</a>
+			   </div>
 <div>
 <table>
 				<tr>
@@ -23,6 +26,26 @@
 							<td width="15%">${list.writed }</td>
 						</tr>
 			   </c:forEach>
+			   
+			<div>
+			<c:set var="currentPage" value="${empty param.page ? 1: param.page }"/>
+			<c:if test="${existPrev }">
+					<a href="/guestbook/list?page=${start -1 }">◁</a>
+			</c:if>
+			<c:forEach begin="${start }" end="${last }" var="p">
+			<c:choose>
+				<c:when test="${p eq currentPage }">
+					${p }
+				</c:when>
+				<c:otherwise>
+					<a href="/guestbook/list?page=${p }">${p }</a> 
+				</c:otherwise>
+			</c:choose>
+			</c:forEach>
+			<c:if test="${existNext }">
+					<a href="/guestbook/list?page=${last + 1 }">▷</a>
+			</c:if>
+			</div>
 </table>
 </div>
 </body>

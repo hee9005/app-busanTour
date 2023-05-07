@@ -25,16 +25,42 @@ public class listController extends HttpServlet{
 		SqlSessionFactory factory = (SqlSessionFactory) req.getServletContext().getAttribute("sqlSessionFactory");
 		SqlSession sqlSession = factory.openSession();
 		
-		Map<String, Object> li = new HashMap<>();
-		String content = req.getParameter("content");
-		String writer = req.getParameter("writer");
-		String writed = req.getParameter("wited");
-		li.put("content", content);
-		li.put("writer", writer);
-		li.put("writed", writed);
-		List<guestBook> list = sqlSession.selectList("messages.findAllDesc", li);
+		int p;
+		if (req.getParameter("page") == null) {
+			p = 1;
+		}else {
+			p = Integer.parseInt(req.getParameter("page"));
+		}
+		Map<String, Object> map = new HashMap<>();
+		map.put("a", p*10-9);
+		map.put("b", p*10);
+		List<guestBook> list = sqlSession.selectList("messages.findAllDesc", map);
 		req.setAttribute("list", list);
+	
+		String arr = req.getParameter("arr");
+		if (arr == null) {			
+		} else {
+			if (arr.equals("writed")) {
+				list = sqlSession.selectList("messages.findAll", map);
+				req.setAttribute("list", list);
+			}
+		}
+		int total = sqlSession.selectOne("messages.countBoard");
+		int lastPage = total / 10 + (total % 10 > 0 ? 1 : 0);
+		int last = (int) Math.ceil(p / 5.0) * 5;
+		int start = last -4;
 		
+		last = last > lastPage ? lastPage : last;
+		
+		req.setAttribute("start", start); 
+		req.setAttribute("last", last); 
+		
+		boolean existPrev = p >=6;
+		boolean existNext = lastPage > last;
+		req.setAttribute("existPrev", existPrev);
+		req.setAttribute("existNext", existNext);
+		
+		sqlSession.close();
 		
 		req.getRequestDispatcher("/WEB-INF/guestbook/list.jsp").forward(req, resp);
 	}
