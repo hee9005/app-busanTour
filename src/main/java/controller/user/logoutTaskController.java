@@ -16,7 +16,7 @@ public class logoutTaskController extends HttpServlet{
 		HttpSession session = req.getSession();
 		session.setAttribute("logon", false);
 		session.setAttribute("logonUser", null);
-		resp.sendRedirect("/");
+		resp.sendRedirect("/index");
 	}
 
 	}	
