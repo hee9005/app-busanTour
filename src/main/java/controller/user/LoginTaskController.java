@@ -31,7 +31,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 			HttpSession session = req.getSession();
 			session.setAttribute("logon", true);
 			session.setAttribute("logonUser", user);
-			resp.sendRedirect("/");
+			resp.sendRedirect("/index");
 		}else {
 			resp.sendRedirect("/user/login?cause=error");
 		}
