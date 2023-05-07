@@ -1,8 +1,6 @@
 package guestbookController;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,29 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import data.Users.users;
+import data.guestBook.guestBook;
 
-@WebServlet("/guestbook/update-task")
-public class UpdateTaskController extends HttpServlet{
+@WebServlet("/guestbook/check")
+public class checkController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
 		SqlSessionFactory factory = (SqlSessionFactory) req.getServletContext().getAttribute("sqlSessionFactory");
 		SqlSession sqlSession = factory.openSession();
-		
-		
-		String content = req.getParameter("content");
+		String caseCheck = req.getParameter("caseCheck");
 		int boardId = Integer.parseInt(req.getParameter("boardId"));
-//		String boardId = req.getParameter("boardId");
-		Map<String, Object> map = new HashMap<>();
-		map.put("content", content);
-		map.put("boardId", boardId);
-		
-		sqlSession.update("messages.updateBoard", map);
-		sqlSession.commit();
-		sqlSession.close();
-		resp.sendRedirect("/guestbook/listDetail?boardId="+boardId);
-		
+		guestBook guestbook = sqlSession.selectOne("messages.findByBoardId",boardId);
+		req.setAttribute("boardId", boardId);
+		req.setAttribute("caseCheck", caseCheck);
+		req.getRequestDispatcher("/WEB-INF/guestbook/check.jsp").forward(req, resp);
 	}
-
 }

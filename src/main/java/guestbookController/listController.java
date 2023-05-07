@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+
+import data.Users.users;
 import data.guestBook.guestBook;
 
 @WebServlet("/guestbook/list")
@@ -24,6 +26,7 @@ public class listController extends HttpServlet{
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		SqlSessionFactory factory = (SqlSessionFactory) req.getServletContext().getAttribute("sqlSessionFactory");
 		SqlSession sqlSession = factory.openSession();
+		users logonUser = (users) req.getSession().getAttribute("logonUser");
 		
 		Map<String, Object> li = new HashMap<>();
 		String content = req.getParameter("content");

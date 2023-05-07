@@ -27,9 +27,8 @@
                     <li>내용 : ${list.content }</li>
                     <li><fmt:formatDate value="${list.writed}" pattern="yyyy-MM-dd HH:mm:ss" /></li>
                     <li>
-                        <a href="/guestbook/update?boardId=${list.boardId}&caseCheck=1" >수정</a>
-                        |
-                        <a href="/guestbook/update?boardId=${list.boardId}&caseCheck=2">삭제</a>
+                        <a href="/guestbook/check?boardId=${list.boardId}&caseCheck=1" >수정</a>
+                        <a href="/guestbook/check?boardId=${list.boardId}&caseCheck=2" >삭제</a>
                     </li>
                 </ul>
             </div>
