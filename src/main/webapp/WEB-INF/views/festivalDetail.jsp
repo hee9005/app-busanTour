@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +10,49 @@
 <link rel="stylesheet" href="/resource/style.css">
 </head>
 <body>
+<c:choose>
+		<c:when test="${logon eq false }">
+			<div id="btn_group1">
+				<form action="/user/login">
+					<button id="login">로그인</button>
+				</form>
+			</div>
+			<div id="btn_group2">
+				<form action="/user/login">
+					<button id="join">회원가입</button>
+				</form>
+			</div>
+		</c:when>
+		<c:when test="${logon eq true }">
+			<div id="btn_group1">
+				<form action="/user/login">
+					<button id="login">마이페이지</button>
+				</form>
+			</div>
+			<div id="btn_group2">
+				<form action="/user/logout">
+					<button id="login">로그아웃</button>
+				</form>
+			</div>
+		</c:when>
+	</c:choose>
+	<button onclick="goBack()">뒤로가기</button>
 		<div class="container">
 			<div class="details">
-			<h2>축제명: ${item.PLACE.toString()}</h2>
+			<h2>축제명: ${item.PLACE.toString()}
+				(조회수:
+				<c:forEach items="${views}" var="view">
+					<c:choose>
+						<c:when test="${view.viewOrder == 1}">
+      1
+    </c:when>
+						<c:otherwise>
+      ${view.viewOrder}
+    </c:otherwise>
+					</c:choose>
+				</c:forEach>
+				)
+			</h2>
 			<div class="image-container">
 				<img src="${item.MAIN_IMG_NORMAL}" class="image" />
 			</div>
@@ -61,6 +103,13 @@
 
 				// 마커가 지도 위에 표시되도록 설정합니다
 				marker.setMap(map);
+				
+				
 					</script>
+					<script>
+function goBack() {
+  window.history.back();
+}
+</script>
 </body>
 </html>
