@@ -24,13 +24,15 @@ public class MypageController extends HttpServlet{
 		SqlSession sqlSession = factory.openSession();
 		
 		users logonUser  = (users) req.getSession().getAttribute("logonUser");
+		req.setAttribute("id", logonUser.getId());
+		req.setAttribute("pass", logonUser.getPass());
+		req.setAttribute("nick", logonUser.getNick());
 		
-	    String userId = logonUser.getId();
+		String userId = logonUser.getId();
+//		guestBook guestbook = sqlSession.selectOne("messages.findByUserId", userId);
 		
-		guestBook guestbook = sqlSession.selectOne("messages.findByUserId", userId);
 		
-		
-	    req.setAttribute("guestbook", guestbook);
+//	    req.setAttribute("guestbook", guestbook);
 	    sqlSession.close();
 	    
 	    req.getRequestDispatcher("/WEB-INF/views/user/mypage.jsp").forward(req, resp);
