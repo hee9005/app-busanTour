@@ -31,7 +31,7 @@ public class listController extends HttpServlet{
 		Map<String, Object> li = new HashMap<>();
 		String content = req.getParameter("content");
 		String writer = req.getParameter("writer");
-		String writed = req.getParameter("wited");
+		String writed = req.getParameter("writed");
 		li.put("content", content);
 		li.put("writer", writer);
 		li.put("writed", writed);
