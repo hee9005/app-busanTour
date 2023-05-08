@@ -13,21 +13,24 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import data.guestBook.guestBook;
 
-
-
-@WebServlet("/guestbook/listDetail")
-public class listDetailController extends HttpServlet{
+@WebServlet("/guestbook/delete")
+public class DeleteController extends HttpServlet {
+	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		SqlSessionFactory factory = (SqlSessionFactory) req.getServletContext().getAttribute("sqlSessionFactory");
 		SqlSession sqlSession = factory.openSession();
-		int boardId = Integer.parseInt(req.getParameter("boardId"));
-		System.out.println("boardId = " + boardId);
 		
-	    guestBook gbook = sqlSession.selectOne("messages.findByBoardId", boardId);
-	    req.setAttribute("gbook", gbook);
-	    sqlSession.close();
-	    req.getRequestDispatcher("/WEB-INF/guestbook/listDetail.jsp").forward(req, resp);
+//		String boardId = req.getParameter("boardId");
+		int boardId = Integer.parseInt(req.getParameter("boardId"));
+		System.out.println(boardId);
+		guestBook guestbook = sqlSession.selectOne("messages.findByBoardId", boardId);
+//		req.setAttribute("gbook", guestbook);
+		req.setAttribute("boardId", boardId);
+		
+		
+		req.getRequestDispatcher("/WEB-INF/guestbook/delete.jsp").forward(req, resp);
 	}
 
 }
