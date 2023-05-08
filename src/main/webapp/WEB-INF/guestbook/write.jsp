@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="/resource/weite.css?<%=System.currentTimeMillis()%>">
 </head>
 <body>
+<button class="list-btn1" onclick="location.href='/guestbook/list'">목록으로</button> 
+<button class="list-btn2" onclick="location.href='/index'">전체글</button>
 <form action="/guestbook/write-task">
 <c:choose>
 <c:when test="${logon eq true }">
@@ -24,9 +26,6 @@
 	
 	<input type="text"name="content" placeholder="내용..."> 
 	<button type="submit">등록</button>
-	<div>
-	<a href = "/guestbook/list">목록으로</a>
-	</div>
 	</form>
 
 </body>
