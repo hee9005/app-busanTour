@@ -1,6 +1,10 @@
-package guestbookController;
+
+package controller.user;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,23 +15,32 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+
+import data.Users.users;
 import data.guestBook.guestBook;
 
 
-
-@WebServlet("/guestbook/listDetail")
-public class listDetailController extends HttpServlet{
+@WebServlet("/user/mypage-detail")
+public class MypageDetailController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
+		
 		SqlSessionFactory factory = (SqlSessionFactory) req.getServletContext().getAttribute("sqlSessionFactory");
 		SqlSession sqlSession = factory.openSession();
-		int boardId = Integer.parseInt(req.getParameter("boardId"));
-		System.out.println("boardId = " + boardId);
 		
-	    guestBook gbook = sqlSession.selectOne("messages.findByBoardId", boardId);
-	    req.setAttribute("gbook", gbook);
-	    sqlSession.close();
-	    req.getRequestDispatcher("/WEB-INF/guestbook/listDetail.jsp").forward(req, resp);
+		users logonUser  = (users) req.getSession().getAttribute("logonUser");	
+		
+		if(logonUser == null) {
+			resp.sendRedirect("/guestbook/index");
+			return;
+		}
+		req.setAttribute("logonUser", logonUser);
+		
+		
+	
+		
 	}
 
 }
+

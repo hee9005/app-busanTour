@@ -21,6 +21,7 @@ public class passcheckController extends HttpServlet {
 		SqlSession sqlSession = factory.openSession();
 		String caseCheck = req.getParameter("caseCheck");
 		int boardId = Integer.parseInt(req.getParameter("boardId"));
+		System.out.println(boardId);
 		String pass = req.getParameter("pass");
 		
 		guestBook guestbook = sqlSession.selectOne("messages.findByBoardId",boardId);
@@ -29,6 +30,7 @@ public class passcheckController extends HttpServlet {
 				req.setAttribute("gbook", guestbook);
 				req.getRequestDispatcher("/WEB-INF/guestbook/update.jsp").forward(req, resp);
 			}else if(caseCheck.equals("2")) {
+				req.setAttribute("boardId", boardId);
 				req.getRequestDispatcher("/WEB-INF/guestbook/delete.jsp").forward(req, resp);
 			}
 		}else {
