@@ -28,21 +28,21 @@ public class FoodTaskController extends HttpServlet {
 		SqlSessionFactory factory =
 				(SqlSessionFactory) req.getServletContext().getAttribute("sqlSessionFactory");
 		try (SqlSession sqlSession = factory.openSession(true)) {
-			List<views> viewsList = sqlSession.selectList("findView");
-			boolean viewExists = false;
-			for (views item : viewsList) {
-				if (item.getTarget().equals(UC_SEQ)) {
-					viewExists = true;
-					break;
-				}
-				req.setAttribute("views", viewsList);
-
-			}
-            if (viewExists) {
-                sqlSession.update("view.updateView", UC_SEQ);
-            } else {
-                sqlSession.insert("view.createView", UC_SEQ);
-            }
+			 List<views> viewsList = sqlSession.selectList("findView");
+	            
+	            List<views> viewsLists = sqlSession.selectList("findViews",UC_SEQ);
+	            boolean viewExists = false;
+	            for (views item : viewsList) {
+	                if (item.getTarget().equals(UC_SEQ)) {
+	                    viewExists = true;
+	                    break;
+	                }
+	            }
+	            if (viewExists) {
+	                sqlSession.update("view.updateView", UC_SEQ);
+	            } else {
+	                sqlSession.insert("view.createView", UC_SEQ);
+	            }
 				foodItem[] fooditems = foodDetailAPI.getFood(UC_SEQ).getItem();
 				for (int i = 0; i < fooditems.length; i++) {
 					fooditem.add(fooditems[i]);
@@ -50,6 +50,7 @@ public class FoodTaskController extends HttpServlet {
 				if (fooditem.isEmpty()) {
 					req.getRequestDispatcher("/WEB-INF/views/not-found.jsp").forward(req, resp);
 				} else {
+					 req.setAttribute("views", viewsLists);
 					req.setAttribute("thing", fooditem.get(0));
 					req.getRequestDispatcher("/WEB-INF/views/foodDetail.jsp").forward(req, resp);
 				}
