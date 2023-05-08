@@ -28,7 +28,7 @@
 		</c:when>
 		<c:when test="${logon eq true }">
 			<div id="btn_group1">
-				<form action="/user/login">
+				<form action="/user/mypage">
 					<button id="login">마이페이지</button>
 				</form>
 			</div>

@@ -28,19 +28,21 @@ public class FestivalTaskController extends HttpServlet {
 		String UC_SEQ = req.getParameter("no");
 		SqlSessionFactory factory = (SqlSessionFactory) req.getServletContext().getAttribute("sqlSessionFactory");
 		try (SqlSession sqlSession = factory.openSession(true)) {
-			List<views> viewsList = sqlSession.selectList("findView");
-			boolean viewExists = false;
-			for (views item : viewsList) {
-				if (item.getTarget().equals(UC_SEQ)) {
-					viewExists = true;
-					break;
-				}
-			}
-			if (viewExists) {
-				sqlSession.update("view.updateView", UC_SEQ);
-			} else {
-				sqlSession.insert("view.createView", UC_SEQ);
-			}
+			 List<views> viewsList = sqlSession.selectList("findView");
+	            
+	            List<views> viewsLists = sqlSession.selectList("findViews",UC_SEQ);
+	            boolean viewExists = false;
+	            for (views item : viewsList) {
+	                if (item.getTarget().equals(UC_SEQ)) {
+	                    viewExists = true;
+	                    break;
+	                }
+	            }
+	            if (viewExists) {
+	                sqlSession.update("view.updateView", UC_SEQ);
+	            } else {
+	                sqlSession.insert("view.createView", UC_SEQ);
+	            }
 
 			festivalitem[] festivalitems = FestivalDetailAPI.getFestivals(UC_SEQ).getItem();
 			for (int i = 0; i < festivalitems.length; i++) {
@@ -49,6 +51,7 @@ public class FestivalTaskController extends HttpServlet {
 			if (festivalitem.isEmpty()) {
 				req.getRequestDispatcher("/WEB-INF/views/not-found.jsp").forward(req, resp);
 			} else {
+				 req.setAttribute("views", viewsLists);
 				req.setAttribute("item", festivalitem.get(0));
 				req.getRequestDispatcher("/WEB-INF/views/festivalDetail.jsp").forward(req, resp);
 			}
