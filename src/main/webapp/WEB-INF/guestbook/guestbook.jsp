@@ -14,6 +14,7 @@
 
   <a href="/guestbook/list" class="my_link"><h2 class="my_subtitle">방명록 목록</h2></a>
   <a href="/guestbook/write" class="my_link"><h2 class="my_subtitle">방명록 작성</h2></a>
+  <a href="/index" class="my_link"><h2 class="my_subtitle">홈으로</h2></a>
 </body>
 </html>
 
