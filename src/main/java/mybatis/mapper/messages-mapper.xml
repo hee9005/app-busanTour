@@ -23,14 +23,17 @@
 	</update>
 	
 	<select id="findAll" parameterType="hashmap" resultType="data.guestBook.guestBook">
-		select * from guest_book ORDER BY writed
+		SELECT * FROM (SELECT ROWNUM rn, t.* FROM (SELECT * FROM GUEST_BOOK ORDER BY writed)t ) where rn between #{a} and #{b}
     </select>
+
     <select id="findAllDesc" parameterType="hashmap" resultType="data.guestBook.guestBook">
-		select * from guest_book order by writed desc
+		SELECT * FROM (SELECT ROWNUM rn, t.* FROM (SELECT * FROM GUEST_BOOK ORDER BY writed desc)t ) where rn between #{a} and #{b}
 	</select>
 	<select id="findByBoardId" parameterType="Integer" resultType="data.guestBook.guestBook">
 		select * from guest_book where board_id = #{boardId}
 	</select>
-	
+		<select id="countBoards" resultType="int">
+		select count(*) from guest_book
+	</select>
 </mapper> 
  

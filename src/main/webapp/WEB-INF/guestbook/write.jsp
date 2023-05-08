@@ -15,6 +15,9 @@
 	<input type="password" name="boardPass" placeholder="비밀번호" >
 	<input type="text"name="content" placeholder="내용..."> 
 	<button type="submit">등록</button>
+	<div>
+	<a href = "/guestbook/list">목록으로</a>
+	</div>
 	</form>
 
 </body>
