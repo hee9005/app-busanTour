@@ -39,6 +39,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 			resp.sendRedirect("/user/login?cause=error");
 		}
 	}
+	sqlSession.commit();
 	sqlSession.close();
 	
 }

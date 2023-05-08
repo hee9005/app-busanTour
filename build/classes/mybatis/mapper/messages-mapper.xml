@@ -26,9 +26,21 @@
 		SELECT * FROM (SELECT ROWNUM rn, t.* FROM (SELECT * FROM GUEST_BOOK ORDER BY writed)t ) where rn between #{a} and #{b}
     </select>
 
-    <select id="findAllDesc" parameterType="hashmap" resultType="data.guestBook.guestBook">
-		SELECT * FROM (SELECT ROWNUM rn, t.* FROM (SELECT * FROM GUEST_BOOK ORDER BY writed desc)t ) where rn between #{a} and #{b}
-	</select>
+   <select id="findAllDesc" parameterType="list" resultType="data.guestBook.guestBook">
+    SELECT * FROM GUEST_BOOK
+    <where>
+        <if test="content != null and content != ''">
+            AND content LIKE CONCAT('%', #{content}, '%')
+        </if>
+        <if test="writer != null and writer != ''">
+            AND writer LIKE CONCAT('%', #{writer}, '%')
+        </if>
+        <if test="writed != null">
+            AND writed = #{writed}
+        </if>
+    </where>
+    ORDER BY BOARD_ID DESC
+</select>
 	<select id="findByBoardId" parameterType="Integer" resultType="data.guestBook.guestBook">
 		select * from guest_book where board_id = #{boardId}
 	</select>
