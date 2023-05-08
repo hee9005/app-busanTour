@@ -8,6 +8,7 @@ String boardPass;
 String content;
 String writer;
 Date writed;
+String userId;
 
 public int getBoardId() {
 	return boardId;
@@ -39,4 +40,12 @@ public Date getWrited() {
 public void setWrited(Date writed) {
 	this.writed = writed;
 }
+public String getUserId() {
+	return userId;
+}
+public void setUserId(String userId) {
+	this.userId = userId;
+}
+
+
 }

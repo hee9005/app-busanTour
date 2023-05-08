@@ -16,10 +16,10 @@ public static int creategusetBook(String content, String boardPass, String write
 		
 		SqlSession session = factory.openSession(true);
 		Map<String, Object> obj = new HashMap<>();
-		obj.put("content", content);
 		obj.put("boardPass", boardPass);
+		obj.put("content", content);
 		obj.put("writer", writer);
-		int r = session.insert("messages.createMessage",obj);
+		int r = session.insert("messages.createAnonymous",obj);
 		System.out.println("r===" +r);
 		session.close();
 		return r;

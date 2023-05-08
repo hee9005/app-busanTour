@@ -5,12 +5,12 @@
 <mapper namespace="messages">
 	<insert id="createMessage" parameterType="hashmap">
 		insert into
-		guest_book(board_id, board_pass, content, writer, writed)
-		values(BOARD_ID_SEQ.NEXTVAL, #{boardPass}, #{content}, #{writer}, SYSDATE)
+		GUEST_BOOK(BOARD_ID, BOARD_PASS, CONTENT, WRITER, WRITED,USER_ID)
+		values(BOARD_ID_SEQ.NEXTVAL, #{boardPass}, #{content}, #{writer}, SYSDATE , #{userId})
 	</insert>
 	<insert id="createAnonymous" parameterType="hashmap">
 		insert into
-		guest_book(board_id, board_pass, content, writer, writed)
+		guest_book(BOARD_ID, BOARD_PASS, CONTENT, WRITER, WRITED)
 		values(BOARD_ID_SEQ.NEXTVAL, #{boardPass}, #{content}, #{writer},
 		SYSDATE)
 	</insert>
@@ -23,14 +23,17 @@
 	</update>
 	
 	<select id="findAll" parameterType="hashmap" resultType="data.guestBook.guestBook">
-		select * from guest_book ORDER BY writed
+		SELECT * FROM (SELECT ROWNUM rn, t.* FROM (SELECT * FROM GUEST_BOOK ORDER BY writed)t ) where rn between #{a} and #{b}
     </select>
+
     <select id="findAllDesc" parameterType="hashmap" resultType="data.guestBook.guestBook">
-		select * from guest_book order by writed desc
+		SELECT * FROM (SELECT ROWNUM rn, t.* FROM (SELECT * FROM GUEST_BOOK ORDER BY writed desc)t ) where rn between #{a} and #{b}
 	</select>
 	<select id="findByBoardId" parameterType="Integer" resultType="data.guestBook.guestBook">
 		select * from guest_book where board_id = #{boardId}
 	</select>
-	
+		<select id="countBoards" resultType="int">
+		select count(*) from guest_book
+	</select>
 </mapper> 
  

@@ -9,6 +9,19 @@
     <link rel="stylesheet" href="/resource/list.css?<%=System.currentTimeMillis()%>">
 </head>
 <body>
+<div align="left">
+			<a href="/guestbook/list?arr=writed">등록순</a>
+			<a href="/guestbook/list?arr=basic">기본순</a>
+		</div>
+		<div>
+		<a href= "/guestbook"> 돌아가기</a>
+		</div>
+		<div>
+		<a href= "/guestbook/write">작성하기</a>
+		</div>
+		<div>
+		<a href= "/index">홈으로</a>
+		</div>
 <div class="container">
     <table>
         <thead>
@@ -35,6 +48,25 @@
         </c:forEach>
         </tbody>
     </table>
+    <div style="padding-top: 22px;text-align: center;">
+			<c:set var="currentPage" value="${empty param.page ? 1: param.page }"/>
+			<c:if test="${existPrev }">
+					<a href="/guestbook/list?page=${start -1 }">◁</a>
+			</c:if>
+			<c:forEach begin="${start }" end="${last }" var="p">
+			<c:choose>
+				<c:when test="${p eq currentPage }">
+					<b style="color:green">${p }</b>
+				</c:when>
+				<c:otherwise>
+					<a href="/guestbook/list?page=${p }&arr=${abc}">${p }</a> 
+				</c:otherwise>
+			</c:choose>
+			</c:forEach>
+			<c:if test="${existNext }">
+					<a href="/guestbook/list?page=${last + 1 }&arr=${abc}">▷</a>
+			</c:if>
+			</div>
 </div>
 </body>
 </html>

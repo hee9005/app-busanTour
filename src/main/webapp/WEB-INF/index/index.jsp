@@ -28,7 +28,7 @@
 		</c:when>
 		<c:when test="${logon eq true }">
 			<div id="btn_group1">
-				<form action="/user/login">
+				<form action="/user/mypage">
 					<button id="login">마이페이지</button>
 				</form>
 			</div>
@@ -66,21 +66,19 @@
 	</div>
 	
 	<h1>부산 여행 정보 서비스</h1>
-<div id="attractions" class="attractions-container">
-  <c:forEach items="${mainHome}" var="obj">
-    <div class="attraction-item"
-         onclick="location.href='/index-task?no=${obj.UC_SEQ}&page=${param.page}'">
-      <div class="image-wrapper">
-        <img src="${obj.MAIN_IMG_THUMB}" alt="${obj.MAIN_TITLE}" />
-      </div>
-      <div class="content-wrapper">
-        <div class="title">${obj.MAIN_TITLE}</div>
-        <div class="address">${obj.ADDR1}</div>
-        <div class="description">${obj.ITEMCNTNTS}</div>
-      </div>
-    </div>
-  </c:forEach>
-</div>
+	<div style="display: flex; flex-wrap: wrap;" id="attractions">
+		<c:forEach items="${mainHome}" var="obj">
+			<div class="attraction-item"
+				onclick="location.href='/index-task?no=${obj.UC_SEQ}&page=${param.page}'">
+				<div class="title">${obj.MAIN_TITLE}</div>
+				<div class="image-wrapper">
+					<img src="${obj.MAIN_IMG_THUMB}" alt="${obj.MAIN_TITLE}" />
+				</div>
+				<div class="address">${obj.ADDR1}</div>
+				<div class="description">${obj.ITEMCNTNTS}</div>
+			</div>
+		</c:forEach>
+	</div>
 	<div class="pagination-container">
 		<div>
 			<c:if test="${existPrev }">
