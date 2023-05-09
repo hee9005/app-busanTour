@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원페이지</title>
-<<<<<<< HEAD
+
 <style>
   button {
     background-color: orange;
@@ -43,9 +43,7 @@
     background-color: #FF7F50;
   }
 </style>
-=======
 
->>>>>>> 0489db9ba3b1155087b5e10d29397c0476b55fef
 </head>
 
 <body>
@@ -58,14 +56,11 @@
 	    </ul>
 
 	    <div>
-<<<<<<< HEAD
+
   <a href="/mypage/update" class="my-button">수정</a> |
   <button class="my-button" onclick="location.href='/guestbook/update?boardId=${gbook.boardId }&caseCheck=2'">삭제</button>
 	</div>	
-=======
-			<a href="/mypage/update">수정</a> 
-        </div>	
->>>>>>> 0489db9ba3b1155087b5e10d29397c0476b55fef
+
 	   
 	   <table>
 	      <thead>

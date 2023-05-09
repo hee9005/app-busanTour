@@ -27,13 +27,13 @@ a {
   margin: 10px;
   padding: 10px;
   color: #fff;
-  background-color: #4CAF50;
+  background-color: #FF5500;
   border-radius: 5px;
   text-decoration: none;
 }
 
 a:hover {
-  background-color: #3e8e41;
+  background-color: #FF7E00;
 }
 
 </style>
