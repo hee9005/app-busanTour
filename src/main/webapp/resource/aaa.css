@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+.container {
+	position: relative;
+}
+
+.sort-links {
+	position: absolute;
+	top: 100px;
+	right: 30%;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+th {
+	background-color: #4CAF50;
+	color: white;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.my_div {
+	margin: 20px 0;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.my_ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.my_ul li {
+	margin-bottom: 10px;
+}

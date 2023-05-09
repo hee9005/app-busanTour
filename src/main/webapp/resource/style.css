@@ -59,8 +59,8 @@
 
 #indexButton button {
 	border: 1px solid #FF7F50;
-	background-color: rgba(0, 0, 0, 0);
-	color: #FFA500; /* 주황색 */
+	background-color: #FF7F50;
+	color: #fff; /* 주황색 */
 	font-size: 20px;
 	padding: 10px 20px;
 	transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
@@ -84,9 +84,9 @@
 }
 
 #attractionButton button {
-	border: 1px solid #FF7F50;
+	border: 1px solid #FF9933;
 	background-color: rgba(0, 0, 0, 0);
-	color: #FFA500; /* 주황색 */
+	color:#FF9933; /* 주황색 */
 	font-size: 20px;
 	padding: 10px 20px;
 	transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
@@ -94,7 +94,7 @@
 
 #attractionButton button:hover {
 	color: white;
-	background-color: #FF7F50;
+	background-color: #FF9933;
 }
 
 #attractionButton button { /* 모서리를 둥글게만듬 */

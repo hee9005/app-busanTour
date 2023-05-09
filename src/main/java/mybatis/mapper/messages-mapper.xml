@@ -26,26 +26,38 @@
 		SELECT * FROM (SELECT ROWNUM rn, t.* FROM (SELECT * FROM GUEST_BOOK ORDER BY writed)t ) where rn between #{a} and #{b}
     </select>
 
-   <select id="findAllDesc" parameterType="list" resultType="data.guestBook.guestBook">
-    SELECT * FROM GUEST_BOOK
-    <where>
-        <if test="content != null and content != ''">
-            AND content LIKE CONCAT('%', #{content}, '%')
-        </if>
-        <if test="writer != null and writer != ''">
-            AND writer LIKE CONCAT('%', #{writer}, '%')
-        </if>
-        <if test="writed != null">
-            AND writed = #{writed}
-        </if>
-    </where>
-    ORDER BY BOARD_ID DESC
+   <select id="findAllDesc" parameterType="hashmap" resultType="data.guestBook.guestBook">
+   SELECT *
+FROM (
+    SELECT gb.*, ROWNUM rnum
+    FROM (
+        SELECT *
+        FROM GUEST_BOOK
+            <where>
+    <if test="content != null">
+        content LIKE '%' || #{content} || '%'
+    </if>
+    <if test="writer != null">
+        AND writer LIKE '%' || #{writer} || '%'
+    </if>
+    <if test="writed != null">
+        AND writed = #{writed}
+    </if>
+</where>
+        ORDER BY BOARD_ID DESC
+    ) gb
+    WHERE ROWNUM <![CDATA[ < ]]>= #{a} + #{b}
+)
+WHERE rnum > #{a}
 </select>
 	<select id="findByBoardId" parameterType="Integer" resultType="data.guestBook.guestBook">
 		select * from guest_book where board_id = #{boardId}
 	</select>
 		<select id="countBoards" resultType="int">
 		select count(*) from guest_book
+	</select>
+	<select id="findByUserId" parameterType="hashmap" resultType="data.guestBook.guestBook">
+		SELSECT * FROM GUEST_BOOK WHERE USER_ID = #{userID}
 	</select>
 </mapper> 
  
