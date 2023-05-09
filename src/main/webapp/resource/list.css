@@ -27,7 +27,7 @@
 #btn_group1 {
 	position: absolute;
 	top: 20px;
-	right: 85px;
+	right: 100px;
 }
 
 #btn_group2 button {
@@ -46,7 +46,7 @@
 #btn_group2 {
 	position: absolute;
 	top: 20px;
-	right: 15px;
+	right: 20px;
 }
 
 h1 {
@@ -168,7 +168,7 @@ a:hover {
 .backButton {
 	position: absolute;
 	top: 7%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
-	left: 32%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
+	left: 33%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
 	border: 0.8px solid #FFA500;
 	border-radius: 4px;
 	background-color: rgba(255, 165, 0, 0.5); /* 주황색 */
@@ -183,7 +183,7 @@ a:hover {
 .writeButton {
 	position: absolute;
 	top: 7%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
-	left: 27%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
+	left: 30%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
 	border: 0.8px solid #FFA500;
 	border-radius: 4px;
 	background-color: rgba(255, 165, 0, 0.5); /* 주황색 */
@@ -197,7 +197,7 @@ a:hover {
 .indexButton {
 	position: absolute;
 	top: 7%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
-	left: 23%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
+	left: 27%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
 	border: 0.8px solid #FFA500;
 	border-radius: 4px;
 	background-color: rgba(255, 165, 0, 0.5); /* 주황색 */

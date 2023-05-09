@@ -30,13 +30,17 @@ public class joinTaskController extends HttpServlet{
 		req.setCharacterEncoding("utf-8");
 
 		String id = req.getParameter("id");
-		String pass = req.getParameter("pass");
+		String pass = req.getParameter("password");
 		String nick = req.getParameter("nick");
 		if (id == null || pass == null || nick == null) {
-			resp.sendRedirect("/user/join?cause=error");
+			resp.sendRedirect("/user/join?cause=error2");
 			return;
 		}
-
+		users user = sqlSession.selectOne("user.findById", id);
+		if(user.getId().equals(id)) {
+			resp.sendRedirect("/user/join?cause=error3");
+			return;
+		}
 		Map<String, Object> map = new HashMap<>();
 		map.put("id", id);
 		map.put("pass", pass);
@@ -46,7 +50,7 @@ public class joinTaskController extends HttpServlet{
 		sqlSession.commit();
 		sqlSession.close();
 
-		resp.sendRedirect("/");
+		resp.sendRedirect("/user/login");
 	}	
 
 }

@@ -27,7 +27,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 	users user = sqlSession.selectOne("user.findById", id);
 	
 	if (user == null) {
-		resp.sendRedirect("/user/login?cause=error");
+		resp.sendRedirect("/user/login?cause=error1");
 	}else {
 		if (user.getPass().equals(pass)) {
 			HttpSession session = req.getSession();

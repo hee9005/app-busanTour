@@ -15,7 +15,7 @@
  </update>
 
  <delete id="deleteId">
- 	DELETE FROM USERS WHERE ID = #{ID}
+ 	DELETE FROM USERS WHERE ID = #{boardId}
  </delete>
  </mapper> 
  
