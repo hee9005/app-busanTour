@@ -30,7 +30,6 @@ public class MypageUpdateController extends HttpServlet{
 		sqlSession.close();
 		
 		req.getRequestDispatcher("/WEB-INF/views/user/mypageupdate.jsp").forward(req, resp);
-		
 	}
 
 }

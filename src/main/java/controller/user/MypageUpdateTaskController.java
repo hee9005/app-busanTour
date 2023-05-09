@@ -40,12 +40,18 @@ public class MypageUpdateTaskController extends HttpServlet {
 		map.put("nick", nick);
 		map.put("userId", id);
 		
-		
 		sqlSession.update("user.updatePass", map);
 		sqlSession.commit();
 		sqlSession.close();
 		
-		resp.sendRedirect("/mypage");	
+		users user = new users();
+		user.setId(id);
+		user.setNick(nick);
+		user.setPass(pass);		
+		HttpSession session = req.getSession();
+		session.setAttribute("logonUser", user);
+		
+		resp.sendRedirect("/user/mypage");	
 		
 	}
 

@@ -15,7 +15,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import data.Users.users;
 import data.guestBook.guestBook;
 
-@WebServlet("/mypage")
+@WebServlet("/user/mypage")
 public class MypageController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

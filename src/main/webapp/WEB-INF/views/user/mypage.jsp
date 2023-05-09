@@ -6,6 +6,42 @@
 <head>
 <meta charset="UTF-8">
 <title>회원페이지</title>
+<style>
+  button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+   table {
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  
+    th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  button.my-button {
+    background-color: rgba(255, 165, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button.my-button:hover {
+    background-color: #FF7F50;
+  }
+</style>
 </head>
 <body>
    <h2>마이페이지</h2>
@@ -17,9 +53,9 @@
 	    </ul>
 
 	    <div>
-			<a href="/mypage/update">수정</a> |
-			<a href="/guestbook/update?boardId=${gbook.boardId }&caseCheck=2">삭제</a>
-        </div>	
+  <a href="/mypage/update" class="my-button">수정</a> |
+  <button class="my-button" onclick="location.href='/guestbook/update?boardId=${gbook.boardId }&caseCheck=2'">삭제</button>
+	</div>	
 	   
 	   <table>
 	      <thead>
@@ -41,7 +77,7 @@
 	   
 	   </table>		
 <div>
-<a href="/user/delete?userId=${id }">회원탈퇴</a>
+  <button class="my-button" onclick="location.href='/user/delete?userId=${id }'">회원탈퇴</button>
 </div>
 
 
