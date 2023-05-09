@@ -10,6 +10,7 @@
 
 </head>
 <body>
+	<button onclick="goBack()" class="goBack">뒤로가기</button>
   <div class="login-wrap">
   <div class="login-html">
     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">로그인</label>
@@ -65,5 +66,10 @@
 </div>
 </div>
 </div>
+ <script>
+function goBack() {
+  window.history.back();
+}
+</script>
 </body>
 </html>
