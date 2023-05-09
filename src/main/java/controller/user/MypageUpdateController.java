@@ -1,7 +1,6 @@
 package controller.user;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,32 +12,24 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import data.Users.users;
-import data.guestBook.guestBook;
 
-@WebServlet("/mypage")
-public class MypageController extends HttpServlet{
+@WebServlet("/mypage/update")
+public class MypageUpdateController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("utf-8");
 		
 		SqlSessionFactory factory = (SqlSessionFactory) req.getServletContext().getAttribute("sqlSessionFactory");
 		SqlSession sqlSession = factory.openSession();
 		
 		users logonUser  = (users) req.getSession().getAttribute("logonUser");
-		req.setAttribute("id", logonUser.getId());
-		req.setAttribute("pass", logonUser.getPass());
-		req.setAttribute("nick", logonUser.getNick());
 		
 		String userId = logonUser.getId();
 		System.out.println(userId);
+		users user = sqlSession.selectOne("user.findById", userId);
+		req.setAttribute("user", user);
+		sqlSession.close();
 		
-		List<guestBook> gbLists = sqlSession.selectList("messages.findByUserId", userId);
-		
-		
-	    req.setAttribute("guestbook", gbLists);
-	    sqlSession.close();
-	    
-	    req.getRequestDispatcher("/WEB-INF/views/user/mypage.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/user/mypageupdate.jsp").forward(req, resp);
 		
 	}
 
