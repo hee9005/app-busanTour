@@ -96,6 +96,6 @@
         <a href="/guestbook/list?page=${last + 1 }&arr=${abc}">▷</a>
     </c:if>
 </div>
-</div>
+
 </body>
 </html>

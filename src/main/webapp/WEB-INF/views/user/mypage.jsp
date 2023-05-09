@@ -45,7 +45,7 @@ button.my-button:hover {
 	background-color: #FF7F50;
 }
 
-.my-button1, .my-button2, .my-button3 {
+.my-button1, .my-button2, .my-button3, .my-button4 {
 	display: inline-block;
 	margin-right: 10px;
 }
@@ -145,17 +145,13 @@ button.my-button:hover {
 				onclick="location.href='/user/delete?userId=${id }'">회원탈퇴</button>
 		</div>
 	</div>
-		<button onclick="goBack()" class="goBack">뒤로가기</button>
+			<button class="my-button4"
+				onclick="location.href='/index'">홈으로</button>
 	<div id="btn_group2">
 		<form action="/user/logout">
 			<button id="login">로그아웃</button>
 		</form>
 	</div>
 
-<script>
-function goBack() {
-  window.history.back();
-}
-</script>
 </body>
 </html>
