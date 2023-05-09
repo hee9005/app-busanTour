@@ -6,8 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/resource/style.css?<%=System.currentTimeMillis()%>">
-
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="/resource/media.css" />
+<link rel="stylesheet" media="screen and (max-width: 1279px)" href="/resource/media2.css" />
 </head>
 <body>
 <div class="container">
