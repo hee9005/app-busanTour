@@ -13,27 +13,27 @@
 <body>
 	<div class="sort-links"></div>
 	<div>
-		<button onclick="location.href='/guestbook'" class="backButton">돌아가기</button>
+		<button onclick="location.href='/guestbook'" class="backButton button-css1">돌아가기</button>
 	</div>
 	<div>
-		<button onclick="location.href='/guestbook/write'" class="writeButton">작성하기</button>
+		<button onclick="location.href='/guestbook/write'" class="writeButton button-css1" >작성하기</button>
 	</div>
 	<div>
-		<button onclick="location.href='/index'" class="indexButton">홈으로</button>
+		<button onclick="location.href='/index'" class="indexButton button-css1">홈으로</button>
 	</div>
 	<div class="container">
-		<h1>게시판</h1>
+		<h1 style="font-size: 30px; font-weight: bold;">게시판</h1>
 		<div>
 			<table>
 				<tr>
-					<th>내용</th>
-					<th>글쓴이</th>
-					<th>작성일</th>
-					<th class="th-buttons">
+					<th width="50%">내용</th>
+					<th width="10%">글쓴이</th>
+					<th width="20%">작성일</th>
+					<th class="th-buttons" width="20%">
 						<button onclick="location.href='/guestbook/list?arr=writed'"
-							class="writerButton">등록순</button>
+							class="button-css">등록순</button>
 						<button onclick="location.href='/guestbook/list?arr=basic'"
-							class="basicButton">기본순</button>
+							class="button-css">기본순</button>
 					</th>
 				</tr>
 				<c:forEach items="${list}" var="list">
@@ -50,7 +50,7 @@
 				</c:forEach>
 			</table>
 		</div>
-
+</div>
 		<div class="paging">
     <c:set var="currentPage" value="${empty param.page ? 1: param.page }" />
     <c:if test="${existPrev }">

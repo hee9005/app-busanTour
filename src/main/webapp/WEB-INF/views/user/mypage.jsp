@@ -15,7 +15,9 @@
 		   <li>닉네임 : ${nick }</li>
 	    </ul>
 		
-
+<div>
+<a href="/user/delete?userId=${id }">회원탈퇴</a>
+</div>
 
 </body>
 </html>

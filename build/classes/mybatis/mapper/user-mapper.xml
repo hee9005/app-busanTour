@@ -10,5 +10,8 @@
  <select id="findById" resultType="data.Users.users">
  	SELECT * FROM USERS WHERE ID = #{id}
  </select>
+ <delete id="deleteId">
+ 	DELETE FROM USERS WHERE ID = #{ID}
+ </delete>
  </mapper> 
  
