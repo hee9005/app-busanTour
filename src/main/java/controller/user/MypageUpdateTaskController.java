@@ -49,9 +49,8 @@ public class MypageUpdateTaskController extends HttpServlet {
 		
 		
 		sqlSession.close();
+		resp.sendRedirect("/user/mypage");	
 		
-		resp.sendRedirect("/mypage");	
-		return;
 	}
 
 }
