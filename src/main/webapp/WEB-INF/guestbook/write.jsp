@@ -52,6 +52,9 @@
 </c:choose>
 	
 	<input type="text"name="content" placeholder="내용..."> 
+	<c:if test="${param.cause eq 'error' }">
+	 <span>모든 필드를 입력해주세요.</span>
+	</c:if>
 	<button type="submit" class="list-btn3">등록</button>
 	</form>
 

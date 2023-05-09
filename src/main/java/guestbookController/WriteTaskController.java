@@ -35,8 +35,10 @@ public class WriteTaskController extends HttpServlet {
 		String userId = req.getParameter("userId");
 		String boardPass = req.getParameter("boardPass");
 		String writer = req.getParameter("writer");
-		
-
+		if (content == null || content.trim().isEmpty() || boardPass == null || boardPass.trim().isEmpty() || writer == null || writer.trim().isEmpty()) {
+		    resp.sendRedirect("/guestbook/write?cause=error");
+		    return;
+		}else {
 		if (logonUser == null) {
 			if (logonUser == null && boardPass != null && content != null && writer != null) {
 				int li =GuestbookDAO.creategusetBook(content,boardPass,writer);
@@ -56,5 +58,6 @@ public class WriteTaskController extends HttpServlet {
 			sqlSession.close();
 		}
 
+		}
 	}
 }
