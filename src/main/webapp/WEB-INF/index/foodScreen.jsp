@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="/resource/style.css">
 </head>
 <body>
+<div class="container">
+        <div class="details">
 	<c:choose>
 		<c:when test="${logon eq false }">
 			<div id="btn_group1">
@@ -24,7 +26,7 @@
 		</c:when>
 		<c:when test="${logon eq true }">
 			<div id="btn_group1">
-				<form action="/user/login">
+				<form action="/user/mypage">
 					<button id="login">마이페이지</button>
 				</form>
 			</div>
@@ -61,7 +63,7 @@
 		</form>
 	</div>
 	
-  <div>부산 여행 정보 서비스</div>
+  <h1>부산 여행 정보 서비스</h1>
   <div style="display: flex; flex-wrap: wrap;" id="attractions">
 
     <c:forEach items="${foods}" var="obj">
@@ -99,6 +101,7 @@
 			</c:if>
 		</div>
 	</div>
-
+</div>
+</div>
 </body>
 </html>

@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/resource/style.css">
+<link rel="stylesheet" href="/resource/Attraction.css">
 </head>
 <body>
 <div class="container">
@@ -26,7 +26,7 @@
 		</c:when>
 		<c:when test="${logon eq true }">
 			<div id="btn_group1">
-				<form action="/user/login">
+			<form action="/user/mypage">
 					<button id="login">마이페이지</button>
 				</form>
 			</div>

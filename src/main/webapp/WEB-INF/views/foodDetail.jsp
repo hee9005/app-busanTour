@@ -25,7 +25,7 @@
 		</c:when>
 		<c:when test="${logon eq true }">
 			<div id="btn_group1">
-				<form action="/user/login">
+			<form action="/user/mypage">
 					<button id="login">마이페이지</button>
 				</form>
 			</div>
@@ -36,7 +36,7 @@
 			</div>
 		</c:when>
 	</c:choose>
-	<button onclick="goBack()">뒤로가기</button>
+	<button onclick="goBack()" class="goBack">뒤로가기</button>
 		<div class="container">
 			<div class="details">
 					<h2>맛집명: ${thing.MAIN_TITLE.toString()}
