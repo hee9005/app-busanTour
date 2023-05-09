@@ -4,11 +4,44 @@ h1 {
 text-align: center; /* h2 태그의 텍스트를 가운데 정렬 */
 }
 
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+	
+	font-family: 'GangwonEdu_OTFBoldA';
+	font-size: 18px;
+}
+
 /* CSS 스타일 코드 */
 body {
 	font-family: sans-serif;
 	margin: 0;
 	padding: 0;
+}
+
+.button-css{
+	background-color: #FFA500;
+	border: 0.8px solid #FFA500;
+	border-radius: 4px;
+	padding: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	color: white;
+}
+
+.button-css1{
+	background-color: #FFA500;
+	border: 0.8px solid #FFA500;
+	border-radius: 4px;
+	padding: 8px;
+	cursor: pointer;
+	font-size: 16px;
+	color: white;
 }
 
 .container {
@@ -94,35 +127,22 @@ a:hover {
 
 .backButton {
 	position: absolute;
-	top: 8%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
+	top: 5%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
 	left: 30%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
-	border: 1px solid #FF7F50;
-	background-color: #FFA500; /* 주황색 */
-	color: #fff; /* 흰색 */
-	padding: 5px;
 	transition: all 0.3s ease-in-out;
 }
 
 .writeButton {
 	position: absolute;
-	top: 8%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
-	left: 26%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
-	border: 1px solid #FF7F50;
-	background-color: #FFA500; /* 주황색 */
-	color: #fff; /* 흰색 */
-	padding: 5px;
-	transition: all 0.3s ease-in-out;
+	top: 5%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
+	left: 25%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
 }
 
 .indexButton {
 	position: absolute;
-	top: 8%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
-	left: 23%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
-	border: 1px solid #FF7F50;
-	background-color: #FFA500; /* 주황색 */
-	color: #fff; /* 흰색 */
-	padding: 5px;
-	transition: all 0.3s ease-in-out;
+	top: 5%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
+	left: 22%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
+
 }
 
 div.paging {
