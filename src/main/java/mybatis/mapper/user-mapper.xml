@@ -10,5 +10,11 @@
  <select id="findById" resultType="data.Users.users">
  	SELECT * FROM USERS WHERE ID = #{id}
  </select>
+ 
+ <update id="updatePass" parameterType="hashmap">
+    update users set pass = #{pass}, nick = #{nick} where id = #{userId} 
+ </update>
+ 
+ 
  </mapper> 
  

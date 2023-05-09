@@ -57,7 +57,7 @@ WHERE rnum > #{a}
 		select count(*) from guest_book
 	</select>
 	<select id="findByUserId" parameterType="hashmap" resultType="data.guestBook.guestBook">
-		SELSECT * FROM GUEST_BOOK WHERE USER_ID = #{userID}
+		SELECT * FROM GUEST_BOOK WHERE USER_ID = #{userID}
 	</select>
 </mapper> 
  
