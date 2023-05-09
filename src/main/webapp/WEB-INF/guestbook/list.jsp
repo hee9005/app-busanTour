@@ -21,6 +21,32 @@
 	<div>
 		<button onclick="location.href='/index'" class="indexButton button-css1">홈으로</button>
 	</div>
+	<c:choose>
+		<c:when test="${logon eq false }">
+			<div id="btn_group1">
+				<form action="/user/login">
+					<button id="login">로그인</button>
+				</form>
+			</div>
+			<div id="btn_group2">
+				<form action="/user/join">
+					<button id="join">회원가입</button>
+				</form>
+			</div>
+		</c:when>
+		<c:when test="${logon eq true }">
+			<div id="btn_group1">
+			<form action="/user/mypage">
+					<button id="login">마이페이지</button>
+				</form>
+			</div>
+			<div id="btn_group2">
+				<form action="/user/logout">
+					<button id="login">로그아웃</button>
+				</form>
+			</div>
+		</c:when>
+	</c:choose>
 	<div class="container">
 		<h1 style="font-size: 30px; font-weight: bold;">게시판</h1>
 		<div>
@@ -69,6 +95,7 @@
     <c:if test="${existNext }">
         <a href="/guestbook/list?page=${last + 1 }&arr=${abc}">▷</a>
     </c:if>
+</div>
 </div>
 </body>
 </html>
