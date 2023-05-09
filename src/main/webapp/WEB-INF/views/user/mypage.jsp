@@ -15,13 +15,12 @@
 		   <li>비밀번호 : ${pass }</li>
 		   <li>닉네임 : ${nick }</li>
 	    </ul>
-	    
+
 	    <div>
 			<a href="/mypage/update">수정</a> |
 			<a href="/guestbook/update?boardId=${gbook.boardId }&caseCheck=2">삭제</a>
         </div>	
-	    
-	    
+	   
 	   <table>
 	      <thead>
 	      <th>글번호</th>
@@ -40,7 +39,11 @@
 	       </c:forEach>     
 	      </tbody>
 	   
-	   </table>
+	   </table>		
+<div>
+<a href="/user/delete?userId=${id }">회원탈퇴</a>
+</div>
+
 
 </body>
 </html>

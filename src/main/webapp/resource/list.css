@@ -1,7 +1,69 @@
 @charset "UTF-8";
 
+/* 로그인/회원가입 버튼 스타일 */
+#login {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+#join {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+#btn_group1 button {
+	border: 1px solid #FF7F50;
+	background-color: rgba(255, 165, 0, 0.5); /* 주황색 */
+	color:#000000;
+	padding: 5px;
+	transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
+}
+
+#btn_group1 button:hover {
+	color: white;
+	background-color: #FF7F50;
+}
+
+#btn_group1 {
+	position: absolute;
+	top: 20px;
+	right: 85px;
+}
+
+#btn_group2 button {
+	border: 1px solid #FF7F50;
+	background-color: rgba(255, 165, 0, 0.5); /* 주황색 */
+	color: #000000;
+	padding: 5px;
+	transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
+}
+
+#btn_group2 button:hover {
+	color: white;
+	background-color: #FF7F50;
+}
+
+#btn_group2 {
+	position: absolute;
+	top: 20px;
+	right: 15px;
+}
+
 h1 {
 text-align: center; /* h2 태그의 텍스트를 가운데 정렬 */
+}
+
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+	
+	font-family: 'GangwonEdu_OTFBoldA';
+	font-size: 18px;
 }
 
 /* CSS 스타일 코드 */
@@ -9,6 +71,26 @@ body {
 	font-family: sans-serif;
 	margin: 0;
 	padding: 0;
+}
+
+.button-css{
+	background-color: #FFA500;
+	border: 0.8px solid #FFA500;
+	border-radius: 4px;
+	padding: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	color: white;
+}
+
+.button-css1{
+	background-color: #FFA500;
+	border: 0.8px solid #FFA500;
+	border-radius: 4px;
+	padding: 8px;
+	cursor: pointer;
+	font-size: 16px;
+	color: white;
 }
 
 .container {
@@ -76,8 +158,8 @@ a:hover {
 
 .writerButton {
   border: 1px solid #FF7F50;
-  background-color: #FFA500; /* 주황색 */
-  color: #fff; /* 흰색 */
+ background-color: rgba(255, 165, 0, 0.5); /* 주황색 */
+	color: #000000;
   padding: 5px;
   transition: all 0.3s ease-in-out;
   margin-left: 10px; /* 버튼 사이의 간격을 조절할 수 있습니다. */
@@ -85,8 +167,8 @@ a:hover {
 
 .basicButton {
   border: 1px solid #FF7F50;
-  background-color: #FFA500; /* 주황색 */
-  color: #fff; /* 흰색 */
+ background-color: rgba(255, 165, 0, 0.5); /* 주황색 */
+	color: #000000;
   padding: 5px;
   transition: all 0.3s ease-in-out;
   margin-left: 10px; /* 버튼 사이의 간격을 조절할 수 있습니다. */
@@ -94,12 +176,13 @@ a:hover {
 
 .backButton {
 	position: absolute;
-	top: 8%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
+	top: 5%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
 	left: 30%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
 	border: 1px solid #FF7F50;
-	background-color: #FFA500; /* 주황색 */
-	color: #fff; /* 흰색 */
+	background-color: rgba(255, 165, 0, 0.5); /* 주황색 */
+	color: #000000;
 	padding: 5px;
+
 	transition: all 0.3s ease-in-out;
 }
 
@@ -108,10 +191,13 @@ a:hover {
 	top: 8%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
 	left: 26%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
 	border: 1px solid #FF7F50;
-	background-color: #FFA500; /* 주황색 */
-	color: #fff; /* 흰색 */
+	background-color: rgba(255, 165, 0, 0.5); /* 주황색 */
+	color: #000000;
 	padding: 5px;
 	transition: all 0.3s ease-in-out;
+	top: 5%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
+	left: 25%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
+
 }
 
 .indexButton {
@@ -119,13 +205,36 @@ a:hover {
 	top: 8%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
 	left: 23%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
 	border: 1px solid #FF7F50;
-	background-color: #FFA500; /* 주황색 */
-	color: #fff; /* 흰색 */
+	background-color: rgba(255, 165, 0, 0.5); /* 주황색 */
+	color: #000000;
 	padding: 5px;
 	transition: all 0.3s ease-in-out;
+
+	top: 5%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
+	left: 22%; /* 버튼이 위치할 수 있는 적절한 값으로 조정하세요. */
 }
 
 div.paging {
     text-align: center;
     margin: 20px auto;
+}
+.writerButton:hover {
+	color: white;
+	background-color: #FF7F50;
+}
+.basicButton:hover {
+	color: white;
+	background-color: #FF7F50;
+}
+.backButton:hover {
+	color: white;
+	background-color: #FF7F50;
+}
+.writeButton:hover {
+	color: white;
+	background-color: #FF7F50;
+}
+.indexButton:hover {
+	color: white;
+	background-color: #FF7F50;
 }

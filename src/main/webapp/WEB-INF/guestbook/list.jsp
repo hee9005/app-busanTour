@@ -13,27 +13,53 @@
 <body>
 	<div class="sort-links"></div>
 	<div>
-		<button onclick="location.href='/guestbook'" class="backButton">돌아가기</button>
+		<button onclick="location.href='/guestbook'" class="backButton button-css1">돌아가기</button>
 	</div>
 	<div>
-		<button onclick="location.href='/guestbook/write'" class="writeButton">작성하기</button>
+		<button onclick="location.href='/guestbook/write'" class="writeButton button-css1" >작성하기</button>
 	</div>
 	<div>
-		<button onclick="location.href='/index'" class="indexButton">홈으로</button>
+		<button onclick="location.href='/index'" class="indexButton button-css1">홈으로</button>
 	</div>
+	<c:choose>
+		<c:when test="${logon eq false }">
+			<div id="btn_group1">
+				<form action="/user/login">
+					<button id="login">로그인</button>
+				</form>
+			</div>
+			<div id="btn_group2">
+				<form action="/user/join">
+					<button id="join">회원가입</button>
+				</form>
+			</div>
+		</c:when>
+		<c:when test="${logon eq true }">
+			<div id="btn_group1">
+			<form action="/user/mypage">
+					<button id="login">마이페이지</button>
+				</form>
+			</div>
+			<div id="btn_group2">
+				<form action="/user/logout">
+					<button id="login">로그아웃</button>
+				</form>
+			</div>
+		</c:when>
+	</c:choose>
 	<div class="container">
-		<h1>게시판</h1>
+		<h1 style="font-size: 30px; font-weight: bold;">게시판</h1>
 		<div>
 			<table>
 				<tr>
-					<th>내용</th>
-					<th>글쓴이</th>
-					<th>작성일</th>
-					<th class="th-buttons">
+					<th width="50%">내용</th>
+					<th width="10%">글쓴이</th>
+					<th width="20%">작성일</th>
+					<th class="th-buttons" width="20%">
 						<button onclick="location.href='/guestbook/list?arr=writed'"
-							class="writerButton">등록순</button>
+							class="button-css">등록순</button>
 						<button onclick="location.href='/guestbook/list?arr=basic'"
-							class="basicButton">기본순</button>
+							class="button-css">기본순</button>
 					</th>
 				</tr>
 				<c:forEach items="${list}" var="list">
@@ -50,7 +76,7 @@
 				</c:forEach>
 			</table>
 		</div>
-
+</div>
 		<div class="paging">
     <c:set var="currentPage" value="${empty param.page ? 1: param.page }" />
     <c:if test="${existPrev }">
@@ -69,6 +95,7 @@
     <c:if test="${existNext }">
         <a href="/guestbook/list?page=${last + 1 }&arr=${abc}">▷</a>
     </c:if>
+</div>
 </div>
 </body>
 </html>
