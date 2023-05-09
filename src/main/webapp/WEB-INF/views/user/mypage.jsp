@@ -6,7 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>회원페이지</title>
+
 </head>
+
 <body>
    <h2>마이페이지</h2>
   
@@ -17,8 +19,7 @@
 	    </ul>
 
 	    <div>
-			<a href="/mypage/update">수정</a> |
-			<a href="/guestbook/update?boardId=${gbook.boardId }&caseCheck=2">삭제</a>
+			<a href="/mypage/update">수정</a> 
         </div>	
 	   
 	   <table>

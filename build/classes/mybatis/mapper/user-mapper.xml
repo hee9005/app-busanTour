@@ -13,10 +13,9 @@
  <update id="updatePass" parameterType="hashmap">
     update users set pass = #{pass}, nick = #{nick} where id = #{userId} 
  </update>
-   
+
  <delete id="deleteId">
  	DELETE FROM USERS WHERE ID = #{ID}
  </delete>
-
  </mapper> 
  
