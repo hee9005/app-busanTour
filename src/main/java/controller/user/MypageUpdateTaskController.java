@@ -47,6 +47,7 @@ public class MypageUpdateTaskController extends HttpServlet {
 		req.getSession().removeAttribute("logonUser");
 		req.getSession().setAttribute("logonUser", user);
 		
+		
 		sqlSession.close();
 		
 		resp.sendRedirect("/mypage");	
