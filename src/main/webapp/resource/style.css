@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-
+  @import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
 /* 로그인/회원가입 버튼 스타일 */
 #login {
 	border-top-left-radius: 5px;
@@ -307,7 +307,7 @@
 	height: auto;
 }
  body {
-  background-image: url('https://a.cdn-hotels.com/gdcs/production81/d1958/660649a2-7183-4376-ba6d-fa9c72847c83.jpg?impolicy=fcrop&w=1600&h=1600&q=medium');
+  background-image: url('https://images.pexels.com/photos/3250614/pexels-photo-3250614.jpeg?auto=compress&cs=tinysrgb&w=1600');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
