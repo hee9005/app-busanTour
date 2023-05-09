@@ -28,6 +28,7 @@ public class MypageController extends HttpServlet{
 		req.setAttribute("id", logonUser.getId());
 		req.setAttribute("pass", logonUser.getPass());
 		req.setAttribute("nick", logonUser.getNick());
+		System.out.println("nick"+logonUser.getNick());
 		
 		String userId = logonUser.getId();
 		System.out.println(userId);
