@@ -35,7 +35,7 @@ public class WriteTaskController extends HttpServlet {
 		String userId = req.getParameter("userId");
 		String boardPass = req.getParameter("boardPass");
 		String writer = req.getParameter("writer");
-		if (content == null || content.trim().isEmpty() || boardPass == null || boardPass.trim().isEmpty() || writer == null || writer.trim().isEmpty()) {
+		if (content == null ||  boardPass == null ||  writer == null) {
 		    resp.sendRedirect("/guestbook/write?cause=error");
 		    return;
 		}else {

@@ -136,10 +136,6 @@ button.my-button:hover {
 	<div class="parent">
 		<button class="my-button1" onclick="location.href='/mypage/update'">계정
 			수정</button>
-		<c:forEach var="item" items="${guestbook }">
-			<button class="my-button2"
-				onclick="location.href='/guestbook/delete?boardId=${item.boardId}'">삭제</button>
-		</c:forEach>
 		<div>
 			<button class="my-button3"
 				onclick="location.href='/user/delete?userId=${id }'">회원탈퇴</button>
