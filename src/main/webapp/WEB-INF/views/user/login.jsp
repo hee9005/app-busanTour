@@ -41,7 +41,7 @@
       </form>
       </div>
     <div class="sign-up-htm">
-  <form action="/user/join-task" method="post" onsubmit="return validateForm()">
+  <form action="/user/join-task" method="post" >
     <div class="group">
       <label for="id" class="label">UserId</label>
       <input type="text" id="id" name="id" pattern="[a-zA-Z][a-zA-Z0-9]{4,}" required>
@@ -61,7 +61,6 @@
       <input type="submit" class="button" value="Sign Up">
     </div>
   </form>
-  <span id="error-message"></span>
 </div>
 </div>
 </div>
