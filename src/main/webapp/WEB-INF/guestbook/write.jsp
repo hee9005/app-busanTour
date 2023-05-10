@@ -41,9 +41,8 @@
 <form action="/guestbook/write-task">
 <c:choose>
 <c:when test="${logon eq true }">
-<input type="hidden" name="userId" placeholder="${logonUser.id }" >
-	<input type="hidden" name="writer" placeholder="${logonUser.nick }" >
-	<input type="hidden" name="boardPass" placeholder="${logonUser.pass }"  >
+  <input type="hidden" name="writer" value="${logonUser.nick}">
+  <input type="hidden" name="boardPass" value="${logonUser.pass}">
 </c:when>
 <c:when test="${logon eq false }">
 	<input type="text" name="writer" placeholder="닉네임" >
